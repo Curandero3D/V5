@@ -1,0 +1,46 @@
+[
+  {
+    "id": "PROJ-901",
+    "titulo": "Célula de Ensamble Robótico",
+    "categoria": "Robótica",
+    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWWIF1hJsqYhla8hcS1BE-aYiodqU_DFTd0SLdtqL1HRMBN7B5L4k8Ycu72dCrVeWTJxA_uV6CGeH7ZPAvkkw6U5nupj7ezo1X_NuOUVR4hXnPJOsYhqymSm-K--w2MsrtKXH0XjDjVXFOSPYAZKAMMotLwqyA2bPpbnudpR8k6AqR-DTTBuW6SW2z3o-MsdimVxXYlPOXnEQZhGGYOuBvIJvD7Z5_1mCDt9-UUYG8cZ4Ys_2SrEgY",
+    "descripcion": "Integración de brazos robóticos de 6 ejes para ensamble de precisión en ambiente controlado, reduciendo el ciclo de producción en un 25%.",
+    "cliente": "Sector Automotriz Tier 1",
+    "fecha": "2026-05",
+    "destacado": true,
+    "estado": "Completado"
+  },
+  {
+    "id": "PROJ-882",
+    "titulo": "Escaneo de Motores de Alta Precisión",
+    "categoria": "Metrología",
+    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuDXk5p9hy-wnRAs0pzvHtk7u1cL_VTbNrId9c9MTgkPzLgCdVstwDFif_H7IQDIdNIUOb7nW9weurOUrPQXDMqY4L1P2bvNs7PMKEctHSM-07SHkIaCCagsWgajv96aF0u8GLjn4tgxVaZ0Cj3AqZX43Y3acTM5C8l7FS0HnihL77BJ1oCeS5oCqKTrsJrU9ngXC1k7g5DJV2zCDg7c1rDNhIKFtf5a0c7TK_YXdLaQKxsKEAbhJeYj",
+    "descripcion": "Digitalización 3D de monoblocks mediante láser azul para control de calidad dimensional y reconstrucción de superficies críticas.",
+    "cliente": "Industria de Manufactura",
+    "fecha": "2026-03",
+    "destacado": true,
+    "estado": "Activo (En Proceso)"
+  },
+  {
+    "id": "PROJ-874",
+    "titulo": "Impresión de Refacciones Metálicas",
+    "categoria": "Manufactura Aditiva",
+    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGxCPP9VK-S9oSyWiSgKUZ5NB6pesNM2LOaN5hsOY__JRrpQ6GAzKPvGdyoYzjW6cTDGKHIynlc10wJU5qmrwN6VRuPAqMqyMYoqRZUdWBg1MU5Ye9j7o54Ilpl3N-R5M1U0C7ZPOmfjbXDt41GJhocKMp9rLYongtSNcU91HUvt5rrzb7f0C9CYH_ZS8Ukt0qXfa1IA3qNCQFkW8xvm0HW72MZoj4OXnhfL6_5MaM3wg_1bQywn-3",
+    "descripcion": "Fabricación de componentes críticos en acero inoxidable mediante DMLS, eliminando la necesidad de herramentales costosos para lotes pequeños.",
+    "cliente": "Mantenimiento Industrial",
+    "fecha": "2026-01",
+    "destacado": false,
+    "estado": "Completado"
+  },
+  {
+    "id": "PROJ-860",
+    "titulo": "Línea de Producción Automatizada",
+    "categoria": "Automatización",
+    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuA0u4O25IlhUhAOKUdXt6TRWnJLio1SFVC59zws018E6tEYj6prve0gDmDDEsCB0iGbCBmgFmVWPtYYq79TzOHcnti6V4vX1c9P1dmJolrIE_VTGsUwOiW6kUeHppdqLLot_Tj0LjKwbOJdtZvsM7o3gFCbWNzo0xbnkJIwatgowciOf__8j2llsXuVWlULCSTrdXFsTjaQEX5uL4S8YUf3pEpWQ9IfVGn8W9D1h3t5H293vYnmCJnl",
+    "descripcion": "Diseño y puesta en marcha de línea de soldadura automatizada con monitoreo en tiempo real y sistemas de seguridad integrados.",
+    "cliente": "Bienes de Consumo",
+    "fecha": "2025-11",
+    "destacado": false,
+    "estado": "Activo (En Proceso)"
+  }
+]

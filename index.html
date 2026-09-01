@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laboratorio de Manufactura Aditiva | High-Precision Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#2f486a",
+                    "on-tertiary-fixed": "#161a32",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#d7e2ff",
+                    "on-tertiary-fixed-variant": "#414560",
+                    "on-primary-fixed-variant": "#004491",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#acc7ff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#424752",
+                    "surface-tint": "#115cb9",
+                    "on-background": "#1b1b1b",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-container": "#0056b3",
+                    "inverse-surface": "#303030",
+                    "outline": "#727784",
+                    "outline-variant": "#c2c6d4",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#cbceee",
+                    "surface-dim": "#dadada",
+                    "secondary": "#476083",
+                    "background": "#f9f9f9",
+                    "on-secondary-container": "#445d80",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-bright": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary": "#3c405a",
+                    "primary": "#003f87",
+                    "tertiary-fixed-dim": "#c1c4e5",
+                    "surface-container": "#eeeeee",
+                    "tertiary-container": "#535773",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#d4e3ff",
+                    "tertiary-fixed": "#dee0ff",
+                    "secondary-fixed-dim": "#afc8f0",
+                    "primary-fixed-dim": "#acc7ff",
+                    "on-surface": "#1b1b1b",
+                    "on-primary-container": "#bbd0ff",
+                    "secondary-container": "#bdd6ff",
+                    "on-primary-fixed": "#001a40",
+                    "on-secondary-fixed": "#001c3a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "margin": "32px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "mono-data": [
+                            "JetBrains Mono"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "mono-data": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    }
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Grid pattern background for tech feel */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        }
+
+        .tech-border {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .tech-card:hover {
+            border-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 86, 179, 0.1), 0 8px 10px -6px rgba(0, 86, 179, 0.1);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: rgba(0, 86, 179, 0.2);
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 24px;
+            }
+        }
+    </style>
+<script src="js/redireccion.js"></script>
+<link rel="stylesheet" href="css/visor.css"/>
+<link rel="stylesheet" href="css/movil.css"/>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-b border-outline/10 dark:border-outline-variant/10 flat no shadows">
+<div class="flex justify-between items-center h-20 px-gutter max-w-[1440px] mx-auto">
+<!-- Brand Logo -->
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed">
+                Laboratorio de Manufactura Aditiva
+            </div>
+<!-- Navigation Links -->
+<div class="hidden md:flex gap-md h-full items-end">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-200 pb-1 h-full flex items-end" href="#servicios">Servicios</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-200 pb-1 h-full flex items-end" href="#sectores">Sectores</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-200 pb-1 h-full flex items-end" href="#portafolio">Proyectos</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all duration-200 pb-1 h-full flex items-end" href="#nosotros">Nosotros</a>
+</div>
+<!-- Trailing Action -->
+<a href="#contacto" class="hidden md:block bg-primary-container text-on-primary font-label-caps text-label-caps px-md py-sm rounded-DEFAULT hover:bg-primary transition-colors">
+                Cotizar Proyecto
+            </a>
+<!-- Mobile Menu Toggle -->
+<button type="button" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movil" class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu" id="icono-menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Menú desplegable (solo móvil; en escritorio queda oculto por CSS) -->
+<div id="menu-movil">
+<a href="#servicios">Servicios</a>
+<a href="#core-tools">Calidad</a>
+<a href="#sectores">Sectores</a>
+<a href="#portafolio">Proyectos</a>
+<a href="#proceso">Proceso</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto" class="destacado">Cotizar proyecto</a>
+</div>
+
+<!-- HERO SECTION -->
+<header class="relative w-full min-h-[819px] flex items-center bg-surface-bright bg-grid-pattern border-b border-outline/10">
+<div class="absolute inset-0 z-0"><video autoplay="" class="absolute inset-0 w-full h-full object-cover opacity-40" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuBybsdUafSWo5dCxI7zS52Zd9RwS78e9LBrfpyiitnzdVqkUWCjqjPZz_aXrzFEb0-EM2DWn9KGc4HsjkELa_q1CAtbuP_joplS20R6mlvYORt6900dBR5mh3NJzPvfnjxot1T9WamrFk5HABuHkFWEg8QOjxXI800-uUhq6NONj9E2Xk2XvuorCYxRRrxHLH2ChFb_wE8nbMvwZ0dyNVR3w0te8TlKGQzBjCXkHaiy5AmTsuKe7tY4"><source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4"/></video><div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-0"></div></div>
+<div class="max-w-[1440px] mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10 py-xl">
+<div class="md:col-span-8 flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-2 bg-primary"></div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">PRECISION CONTROL V1.2</span>
+</div>
+<h1 class="font-display-lg text-display-lg max-w-4xl text-balance text-white">
+                    Ingeniería que transforma ideas en soluciones industriales
+                </h1>
+<p class="font-body-lg text-body-lg max-w-2xl border-l-2 border-outline-variant pl-md text-white/90">
+                    Diseño mecánico de alta precisión, ingeniería inversa, automatización de líneas de ensamble y manufactura aditiva industrial. Reducimos costos, tiempos y riesgos con calidad certificada.
+                </p>
+<div class="flex flex-wrap gap-sm pt-sm">
+<a href="#contacto" class="bg-primary-container text-on-primary font-label-caps text-label-caps px-md py-sm rounded-DEFAULT hover:bg-primary transition-colors flex items-center gap-xs">
+                        Solicitar Cotización
+                        <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a href="#servicios" class="bg-transparent text-primary font-label-caps text-label-caps px-md py-sm rounded-DEFAULT border border-primary hover:bg-surface-container-low transition-colors">
+                        Ver Servicios
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<!-- SOBRE NOSOTROS -->
+<section class="py-xl px-gutter max-w-[1440px] mx-auto border-b border-outline/10" id="nosotros">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="flex flex-col gap-md">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Soluciones de Ingeniería Personalizadas</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Somos expertos en ingeniería aplicada. Ayudamos a la industria a reducir costos de fabricación, acelerar tiempos de desarrollo y minimizar riesgos técnicos. Nuestro enfoque se centra en soluciones integrales y altamente especializadas.
+            </p>
+<div class="grid grid-cols-2 gap-md mt-sm">
+<div class="tech-border p-md rounded-DEFAULT bg-surface-container-lowest">
+<div class="font-display-lg text-primary font-bold">40%</div>
+<div class="font-label-caps text-on-surface-variant mt-xs">Reducción en tiempos de desarrollo</div>
+</div>
+<div class="tech-border p-md rounded-DEFAULT bg-surface-container-lowest">
+<div class="font-display-lg text-primary font-bold">30%</div>
+<div class="font-label-caps text-on-surface-variant mt-xs">Optimización de costos operativos</div>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] bg-surface-container tech-border rounded-lg overflow-hidden">
+<img alt="Laboratorio de ingeniería" class="w-full h-full object-cover mix-blend-luminosity opacity-80 hover:mix-blend-normal hover:opacity-100 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRySMFmoQdvl_ttU2puJVPeznHazXT_BfnBCggPbw1pKiz8LsqBpLJOIuegm59TruIE8uvYHwHmHOjTetZ-CrOGdLJ3uiwHp4nZdL_y6GgOZsvKp2nGoy55y8npxqVitf4DTOhFFlva0wXW9C_IhiNXCKIAhS8j-CsvFPc3EF1XVRi7GKDrp3HgBrUCmIG1RAyKd4F16NJNMldDeAGzNfNtI98QPlA1Q-n5PAFyj8g0ZOPmkiksGLb"/>
+</div>
+</div>
+</section>
+<!-- NUESTROS SERVICIOS -->
+<section class="py-xl px-gutter bg-surface-container-lowest border-b border-outline/10" id="servicios">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-xl flex flex-col items-center">
+<span class="font-label-caps text-primary tracking-widest uppercase mb-sm">Capacidades Técnicas</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Nuestros Servicios</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Servicio 1 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Ingeniería Mecánica</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Diseño de mecanismos, modelado CAD, cálculo de tolerancias, generación de BOMs y documentación técnica industrial.</p>
+</div>
+<!-- Servicio 2 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">3d_rotation</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Ingeniería Inversa</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Escaneo 3D de alta resolución, reconstrucción CAD, reproducción de partes obsoletas y análisis dimensional.</p>
+</div>
+<!-- Servicio 3 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">architecture</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Manufactura Aditiva</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Impresión 3D industrial (FDM, Resina) para prototipado funcional, herramientas, jigs y herramentales ligeros.</p>
+</div>
+<!-- Servicio 4 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">handyman</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Diseño de Herramentales</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Diseño y fabricación de fixtures, jigs, nidos de ensamble y sistemas Poka-Yoke para optimizar líneas de producción.</p>
+</div>
+<!-- Servicio 5 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">conveyor_belt</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Automatización Industrial</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Optimización de procesos, integración mecánica, diseño de estaciones de trabajo y celdas automatizadas.</p>
+</div>
+<!-- Servicio 6 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">lightbulb</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Desarrollo de Producto</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Acompañamiento integral desde la conceptualización de la idea hasta la validación y producción en serie.</p>
+</div>
+<!-- Servicio 7 -->
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-sm h-full md:col-span-2 lg:col-span-3">
+<span class="material-symbols-outlined text-[40px] text-primary mb-sm">support_agent</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Consultoría de Ingeniería</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">Asesoría técnica especializada, auditorías de diseño y resolución de problemas complejos en manufactura.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE TOOLS (CALIDAD) -->
+<section class="py-xl px-gutter bg-surface border-b border-outline/10" id="core-tools">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<div class="lg:col-span-5 flex flex-col gap-md">
+<span class="font-label-caps text-primary tracking-widest uppercase">Estándares Internacionales</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Core Tools (Calidad)</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant border-l-2 border-primary pl-md">
+                    En Laboratorio de Manufactura Aditiva, no solo diseñamos; nos aseguramos de que cada proyecto funcione y esté rigurosamente validado bajo las más estrictas metodologías de la industria.
+                </p>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">analytics</span>
+<span class="font-label-caps text-on-surface font-bold">APQP</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">warning</span>
+<span class="font-label-caps text-on-surface font-bold">FMEA</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">straighten</span>
+<span class="font-label-caps text-on-surface font-bold">MSA</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">show_chart</span>
+<span class="font-label-caps text-on-surface font-bold">SPC</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">assignment_turned_in</span>
+<span class="font-label-caps text-on-surface font-bold">Planes de Control</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">account_tree</span>
+<span class="font-label-caps text-on-surface font-bold">Diagramas de Flujo</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">security</span>
+<span class="font-label-caps text-on-surface font-bold">Gestión de Riesgos</span>
+</div>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container-lowest tech-border rounded-DEFAULT text-center gap-xs">
+<span class="material-symbols-outlined text-[32px] text-primary">verified</span>
+<span class="font-label-caps text-on-surface font-bold">Quality by Design</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTORES INDUSTRIALES -->
+<section class="py-xl px-gutter bg-surface-bright border-b border-outline/10" id="sectores">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Sectores Industriales</h2>
+<p class="font-body-md text-on-surface-variant mt-sm">Soluciones adaptadas a las exigencias de industrias clave.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<span class="font-body-md font-bold text-on-surface">Automotriz</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">factory</span>
+<span class="font-body-md font-bold text-on-surface">Manufactura</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">science</span>
+<span class="font-body-md font-bold text-on-surface">Cosmética</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+<span class="font-body-md font-bold text-on-surface">Bienes de Consumo</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+<span class="font-body-md font-bold text-on-surface">Automatización</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">engineering</span>
+<span class="font-body-md font-bold text-on-surface">Ingeniería</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">biotech</span>
+<span class="font-body-md font-bold text-on-surface">I+D</span>
+</div>
+<div class="bg-surface-container p-md rounded-DEFAULT flex items-center gap-sm hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<span class="font-body-md font-bold text-on-surface">Producción</span>
+</div>
+</div>
+</div>
+</section><section class="py-xl px-gutter bg-surface border-b border-outline/10" id="portafolio">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-xl flex flex-col items-center">
+<span class="font-label-caps text-primary tracking-widest uppercase mb-sm">Casos de Éxito</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Portafolio de Proyectos</h2>
+<p class="font-body-md text-on-surface-variant mt-sm max-w-2xl">Explora nuestras implementaciones técnicas de alta complejidad y los resultados obtenidos para la industria global.</p>
+</div>
+<!-- Filtros: se generan solos desde data/proyectos.json -->
+<div class="flex flex-wrap justify-center gap-sm mb-lg" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md" id="galeria" aria-live="polite"></div>
+</div>
+</section>
+<!-- NUESTRO PROCESO (Timeline) -->
+<section class="py-xl px-gutter bg-surface-container-lowest border-b border-outline/10 overflow-hidden" id="proceso">
+<div class="max-w-[1440px] mx-auto relative">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Nuestro Proceso</h2>
+<p class="font-body-md text-on-surface-variant mt-sm">Metodología comprobada de 9 pasos para asegurar el éxito del proyecto.</p>
+</div>
+<div class="relative timeline-line pt-md pb-md opacity-100 flex flex-col"><!-- Step 1 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div class="text-right pr-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 1</span><h4 class="font-headline-md text-on-surface mb-xs">Diagnóstico</h4><p class="font-body-md text-on-surface-variant text-sm">Análisis inicial de requerimientos y viabilidad técnica.</p></div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div></div></div><!-- Step 2 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div class="pl-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 2</span><h4 class="font-headline-md text-on-surface mb-xs">Propuesta</h4><p class="font-body-md text-on-surface-variant text-sm">Desarrollo de propuesta técnica y económica detallada.</p></div></div></div><!-- Step 3 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div class="text-right pr-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 3</span><h4 class="font-headline-md text-on-surface mb-xs">Ingeniería Conceptual</h4><p class="font-body-md text-on-surface-variant text-sm">Bocetos, esquemas preliminares y selección de conceptos.</p></div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div></div></div><!-- Step 4 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div class="pl-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 4</span><h4 class="font-headline-md text-on-surface mb-xs">Ingeniería de Detalle</h4><p class="font-body-md text-on-surface-variant text-sm">Modelado 3D preciso, planos de fabricación y listas de materiales (BOM).</p></div></div></div><!-- Step 5 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div class="text-right pr-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 5</span><h4 class="font-headline-md text-on-surface mb-xs">Validación Virtual</h4><p class="font-body-md text-on-surface-variant text-sm">Simulaciones FEA/cinemáticas para garantizar el funcionamiento.</p></div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div></div></div><!-- Step 6 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div class="pl-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 6</span><h4 class="font-headline-md text-on-surface mb-xs">Prototipado</h4><p class="font-body-md text-on-surface-variant text-sm">Manufactura aditiva o mecanizado para validación física.</p></div></div></div><!-- Step 7 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div class="text-right pr-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 7</span><h4 class="font-headline-md text-on-surface mb-xs">Fabricación</h4><p class="font-body-md text-on-surface-variant text-sm">Producción final bajo estrictos controles de calidad.</p></div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div></div></div><!-- Step 8 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div class="pl-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 8</span><h4 class="font-headline-md text-on-surface mb-xs">Implementación</h4><p class="font-body-md text-on-surface-variant text-sm">Instalación, pruebas en sitio y puesta en marcha.</p></div></div></div><!-- Step 9 --><div class="grid grid-cols-[1fr_48px_1fr] items-center group mb-lg last:mb-0 w-full"><div class="text-right pr-md"><div class="bg-surface p-md rounded-DEFAULT tech-border group-hover:border-primary transition-colors shadow-sm inline-block w-full max-w-md"><span class="font-label-caps text-primary block mb-xs">Fase 9</span><h4 class="font-headline-md text-on-surface mb-xs">Soporte Continuo</h4><p class="font-body-md text-on-surface-variant text-sm">Acompañamiento post-venta y optimización continua.</p></div></div><div class="relative h-full flex justify-center items-start pt-8"><div class="w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest z-10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div></div><div></div></div></div>
+</div>
+</section>
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="py-xl px-gutter bg-surface-bright border-b border-outline/10" id="por-que">
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background text-center mb-xl">Por Qué Elegirnos</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="flex flex-col items-center text-center gap-sm p-lg">
+<span class="material-symbols-outlined text-[48px] text-primary">engineering</span>
+<h4 class="font-headline-md text-on-surface">Ingeniería Especializada</h4>
+<p class="font-body-md text-on-surface-variant">Personal altamente capacitado y certificado en las últimas tecnologías de diseño y manufactura.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-sm p-lg">
+<span class="material-symbols-outlined text-[48px] text-primary">handshake</span>
+<h4 class="font-headline-md text-on-surface">Soluciones Personalizadas</h4>
+<p class="font-body-md text-on-surface-variant">Cada proyecto se analiza individualmente para ofrecer la solución más eficiente y rentable.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-sm p-lg">
+<span class="material-symbols-outlined text-[48px] text-primary">trending_down</span>
+<h4 class="font-headline-md text-on-surface">Optimización de Costos</h4>
+<p class="font-body-md text-on-surface-variant">Reducimos el gasto de materiales y tiempos muertos mediante diseño inteligente y metodologías ágiles.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- GALERÍA -->
+<section class="py-xl px-gutter bg-surface-container border-b border-outline/10" id="galeria">
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background text-center mb-xl">Proyectos Destacados</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sm">
+<div class="aspect-square bg-surface rounded-DEFAULT overflow-hidden relative group cursor-pointer tech-border"><video autoplay="" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 group-hover:scale-105" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuB7N771ldbn3IKAUykXVB24bpDIazJqHK_LOa97Kn5t2ftYgWwKa3_WVnyfguEerTdcVg57RBCnGf9A0mvPq4M5JsODB_4jCUJTaVRAAtSGEypgJE-fxU8rTE6_WL3bqqmKmJvjhT1wgD9X29J9-K91YInNvRi53fM6_Kf2vRWP3_RsOLGS6Y_z1mY4j7dHHlN7bZcVA2D2Zc1hgX8yoodi6YGKBhj0U4LBHLR_hkmbhWJZyBzAq533"><source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4"/></video><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div><div class="absolute bottom-0 left-0 w-full p-md z-10"><span class="font-label-caps text-on-primary">Ingeniería Inversa</span></div></div>
+<div class="aspect-square bg-surface rounded-DEFAULT overflow-hidden relative group cursor-pointer tech-border"><video autoplay="" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 group-hover:scale-105" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5zdb3GBZp7Px7ch6eFwBCY17K76CjSZLaLDIhfPNL-w8xDFyyiCHS8E24vkH-uWjFGjvmujxADltmAAQiNJ5HPQV2YAJ1FqAtZtLoAHeFrscJ409g1mk850LSV2WNAT5VgTdVyamWGWBJmOpI9MQXqRXLjqcMFFTsD8vpiNp70AKRKo0w3lcJ4rxe-x3-opYdZWEmbmuEalCWEKI0Ox5Dw5XqkWeTVGcIBlqEO49OhEeGu0aGqwL"><source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4"/></video><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div><div class="absolute bottom-0 left-0 w-full p-md z-10"><span class="font-label-caps text-on-primary">Diseño CAD Complejo</span></div></div>
+<div class="aspect-square bg-surface rounded-DEFAULT overflow-hidden relative group cursor-pointer tech-border"><video autoplay="" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 group-hover:scale-105" loop="" muted="" playsinline="" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuCk33yZg-AxY8-bEiuAYqAtMyd4p9NHKnwurTIySh2KDOQ4fAigXP00qvXNYjdKpcU9c_DNbi-xPzF5OkTgtY0CxV_pDblKFQ1VdyP0bX64FKJ6BLggyWqGdlU5JSsm1JmdubUu21B8XryCPGsmSdg1Yx3qCQcHBK17qJYoHMgl5gzeDVFD0EygDQnQPSIykZW68nXNQ7m0S1zLeRbBqFeQBfxHMi_JNboKd27B7bj_vlOZqTV7nWPw"><source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4"/></video><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div><div class="absolute bottom-0 left-0 w-full p-md z-10"><span class="font-label-caps text-on-primary">Celdas Robotizadas</span></div></div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIOS -->
+<section class="py-xl px-gutter bg-surface-container-lowest border-b border-outline/10" id="testimonios">
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background text-center mb-xl">Lo que dicen nuestros clientes</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-md">
+<div class="flex gap-xs text-primary">
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+</div>
+<p class="font-body-lg italic text-on-surface-variant flex-grow">"La precisión de los herramentales que diseñaron para nuestra línea de ensamble redujo los defectos en un 85%. Un nivel de ingeniería excepcional."</p>
+<div>
+<h5 class="font-label-caps text-on-surface font-bold">Director de Planta</h5>
+<span class="font-body-md text-on-surface-variant text-sm">Sector Automotriz Tier 1</span>
+</div>
+</div>
+<div class="tech-card p-lg rounded-DEFAULT flex flex-col gap-md">
+<div class="flex gap-xs text-primary">
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+</div>
+<p class="font-body-lg italic text-on-surface-variant flex-grow">"Gracias a su servicio de ingeniería inversa pudimos recuperar refacciones descontinuadas, ahorrando miles de dólares en paros de máquina."</p>
+<div>
+<h5 class="font-label-caps text-on-surface font-bold">Gerente de Mantenimiento</h5>
+<span class="font-body-md text-on-surface-variant text-sm">Industria de Manufactura</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACTO -->
+<section class="py-xl px-gutter bg-surface border-b border-outline/10" id="contacto">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<div class="flex flex-col gap-md">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Inicie su próximo proyecto con nosotros</h2>
+<p class="font-body-md text-on-surface-variant mb-md">Contáctenos para agendar una consultoría técnica o solicitar una cotización formal. Nuestro equipo de ingenieros está listo para resolver sus retos más complejos.</p>
+<div class="flex flex-col gap-sm">
+<a href="mailto:immer88@outlook.com?subject=Solicitud%20de%20cotizaci%C3%B3n" class="bg-primary-container text-on-primary font-label-caps px-md py-sm rounded-DEFAULT flex items-center justify-center gap-sm hover:bg-primary transition-colors w-full md:w-auto">
+<span class="material-symbols-outlined">description</span>
+                        Solicitar Cotización Formal
+                    </a>
+<a href="https://wa.me/524772259654" target="_blank" rel="noopener" class="bg-[#25D366] text-white font-label-caps px-md py-sm rounded-DEFAULT flex items-center justify-center gap-sm hover:bg-[#128C7E] transition-colors w-full md:w-auto">
+<span class="material-symbols-outlined">chat</span>
+                        Contactar vía WhatsApp
+                    </a>
+<a href="mailto:immer88@outlook.com" class="bg-surface-container-high text-on-surface font-label-caps px-md py-sm rounded-DEFAULT flex items-center justify-center gap-sm hover:bg-surface-dim transition-colors border tech-border w-full md:w-auto">
+<span class="material-symbols-outlined">mail</span>
+                        Enviar Correo Electrónico
+                    </a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-DEFAULT tech-border">
+<form class="flex flex-col gap-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-on-surface-variant">Nombre Completo</label>
+<input class="form-input bg-surface border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-primary w-full" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-on-surface-variant">Empresa</label>
+<input class="form-input bg-surface border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-primary w-full" placeholder="Nombre de la empresa" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-on-surface-variant">Correo Electrónico</label>
+<input class="form-input bg-surface border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-primary w-full" placeholder="correo@empresa.com" type="email"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-on-surface-variant">Teléfono</label>
+<input class="form-input bg-surface border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-primary w-full" placeholder="+52 (000) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-caps text-on-surface-variant">Descripción del Proyecto o Requerimiento</label>
+<textarea class="form-textarea bg-surface border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-primary w-full h-32 resize-none" placeholder="Describa brevemente sus necesidades técnicas..."></textarea>
+</div>
+<a href="#contacto" id="btn-enviar-form" class="bg-primary text-on-primary font-label-caps px-md py-sm rounded-DEFAULT mt-sm hover:opacity-90 transition-opacity">
+                        Enviar Mensaje
+                    </a>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline/10 w-full relative bottom-0 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md px-gutter py-xl max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-sm md:col-span-4">
+<div class="font-headline-md text-headline-md text-on-surface">Laboratorio de Manufactura Aditiva</div>
+<p class="font-body-md text-body-md text-on-surface-variant pr-md">
+                    Especialistas en ingeniería de alta precisión, manufactura aditiva y control de calidad industrial para sectores exigentes.
+                </p>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-auto pt-md">
+                    © 2024 Laboratorio de Manufactura Aditiva. High-Precision Engineering.
+                    <a href="admin.html" data-panel="1" title="Acceso administrador" aria-label="Acceso administrador" class="inline-flex items-center align-middle ml-xs opacity-30 hover:opacity-100 hover:text-primary transition-opacity"><span class="material-symbols-outlined" style="font-size:14px">lock</span></a>
+                </div>
+</div>
+<div class="flex flex-col gap-sm md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-on-surface font-bold mb-xs">Servicios</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#servicios">Ingeniería Mecánica</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#servicios">Ingeniería Inversa</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#servicios">Manufactura Aditiva</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#servicios">Diseño de Herramentales</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#servicios">Automatización</a>
+</div>
+<div class="flex flex-col gap-sm md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-on-surface font-bold mb-xs">Core Tools</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#core-tools">APQP &amp; FMEA</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#core-tools">Control de Calidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#core-tools">Gestión de Riesgos</a>
+</div>
+<div class="flex flex-col gap-sm md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-on-surface font-bold mb-xs">Legal &amp; Compliance</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#contacto">Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#contacto">Términos</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#core-tools">ISO 9001:2015 Certificación</a>
+</div>
+<div class="flex flex-col gap-sm md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-on-surface font-bold mb-xs">Contacto</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#contacto">Soporte Técnico</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#contacto">Ventas y Cotizaciones</a>
+<div class="flex gap-sm mt-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#top"><span class="material-symbols-outlined text-[24px]" data-icon="language">language</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="mailto:immer88@outlook.com"><span class="material-symbols-outlined text-[24px]" data-icon="mail">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/524772259654" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[24px]" data-icon="share">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script src="js/visor.js"></script>
+<script src="js/portafolio.js"></script>
+<script src="js/contacto.js"></script>
+<script src="js/acceso.js"></script>
+<script src="js/menu.js"></script>
+</body></html>

@@ -1,0 +1,120 @@
+/* ============================================================
+   ADAPTACIÓN A MÓVIL
+   ------------------------------------------------------------
+   Todo lo de este archivo vive dentro de @media (max-width:767px).
+
+   Eso significa que en pantallas de 768px o más este archivo
+   NO HACE ABSOLUTAMENTE NADA. Tu diseño de escritorio queda
+   intacto, píxel por píxel.
+
+   Aquí solo se corrigen las partes que se ven mal cuando la
+   pantalla es angosta: el alto del hero, la línea de tiempo
+   del proceso a tres columnas, los tamaños de tipografía y
+   los márgenes.
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  /* ---------- Márgenes laterales ---------- */
+  /* 24px a cada lado deja los textos muy pegados al borde en un
+     teléfono. Se reducen a 18px para ganar ancho de lectura. */
+  .px-gutter { padding-left: 18px !important; padding-right: 18px !important; }
+  .py-xl { padding-top: 48px !important; padding-bottom: 48px !important; }
+  .mb-xl { margin-bottom: 32px !important; }
+  .gap-gutter { gap: 20px !important; }
+
+  /* ---------- Tipografía ---------- */
+  /* El titular de 48px desborda en pantallas de 360px. */
+  .text-display-lg { font-size: 32px !important; line-height: 38px !important; }
+  .text-headline-lg { font-size: 24px !important; line-height: 30px !important; }
+  .text-headline-md { font-size: 17px !important; line-height: 23px !important; }
+  .text-body-lg { font-size: 15px !important; line-height: 24px !important; }
+  h1.text-balance { text-wrap: balance; }
+
+  /* ---------- Barra superior ---------- */
+  nav .max-w-\[1440px\] { gap: 8px; }
+
+  /* ---------- Hero ---------- */
+  /* 819px de alto ocupa dos pantallas y media de un teléfono. */
+  header.min-h-\[819px\] { min-height: 78vh !important; }
+  /* El degradado horizontal deja el texto ilegible en vertical:
+     se cambia a vertical, más oscuro abajo. */
+  header .bg-gradient-to-r {
+    background-image: linear-gradient(to top,
+      rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.35) 100%) !important;
+  }
+  /* El video pesa y consume datos móviles: se deja solo el póster. */
+  header video { display: none !important; }
+  header .absolute.inset-0.z-0 {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  /* Botones del hero: uno debajo del otro, a todo lo ancho. */
+  header .flex.flex-wrap > a,
+  header .flex.gap-md > a { flex: 1 1 100% !important; justify-content: center !important; }
+
+  /* ---------- Tarjetas y rejillas ---------- */
+  .gap-md { gap: 14px !important; }
+  .p-md { padding: 16px !important; }
+  .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+
+  /* ---------- Línea de tiempo del proceso ---------- */
+  /* En escritorio son 3 columnas en zigzag (izquierda-punto-derecha).
+     En un teléfono eso deja cada tarjeta en 40px de ancho.
+     Se convierte en una sola columna, todo alineado a la izquierda,
+     con la línea vertical corrida al borde. */
+  #proceso .grid-cols-\[1fr_48px_1fr\] {
+    grid-template-columns: 1fr !important;
+    margin-bottom: 20px !important;
+  }
+  /* Oculta las celdas vacías del zigzag */
+  #proceso .grid-cols-\[1fr_48px_1fr\] > div:empty { display: none !important; }
+  /* La columna del punto central no aplica en una sola columna */
+  #proceso .grid-cols-\[1fr_48px_1fr\] > div.relative.h-full { display: none !important; }
+  /* Todo el texto a la izquierda, sin sangrías del zigzag */
+  #proceso .text-right { text-align: left !important; padding-right: 0 !important; }
+  #proceso .pl-md, #proceso .pr-md { padding-left: 0 !important; padding-right: 0 !important; }
+  #proceso .max-w-md { max-width: 100% !important; }
+  /* La línea vertical decorativa se recorre al margen izquierdo */
+  #proceso .timeline-line::before,
+  #proceso .timeline-line::after { left: 0 !important; transform: none !important; }
+  #proceso .timeline-line { padding-left: 18px; }
+
+  /* ---------- Portafolio ---------- */
+  #galeria { gap: 16px !important; }
+  #filtros { justify-content: flex-start !important; overflow-x: auto; flex-wrap: nowrap;
+             padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+  #filtros::-webkit-scrollbar { display: none; }
+  #filtros > button { flex: 0 0 auto; }
+
+  /* ---------- Formulario de contacto ---------- */
+  form .grid-cols-2 { grid-template-columns: 1fr !important; }
+  input, textarea, select { font-size: 16px !important; } /* evita el zoom de iOS */
+
+  /* ---------- Pie de página ---------- */
+  footer .grid { gap: 28px !important; }
+
+  /* ---------- Menú desplegable ---------- */
+  #menu-movil {
+    display: none;
+    border-top: 1px solid rgba(114,119,132,.2);
+    background: #ffffff;
+  }
+  #menu-movil.abierto { display: block; }
+  #menu-movil a {
+    display: block;
+    padding: 15px 18px;
+    border-bottom: 1px solid rgba(114,119,132,.12);
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    color: #1b1b1b;
+    text-decoration: none;
+  }
+  #menu-movil a:active { background: #f3f3f3; }
+  #menu-movil a.destacado { color: #ffffff; background: #003f87; border-bottom: none; }
+}
+
+/* El menú desplegable nunca debe verse en escritorio */
+@media (min-width: 768px) {
+  #menu-movil { display: none !important; }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Administración - Precisión Core</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#476083",
+                      "on-tertiary-fixed": "#161a32",
+                      "outline-variant": "#c2c6d4",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#bdd6ff",
+                      "on-tertiary-container": "#cbceee",
+                      "outline": "#727784",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c1c4e5",
+                      "on-secondary-fixed-variant": "#2f486a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#445d80",
+                      "on-primary-fixed": "#001a40",
+                      "secondary-fixed": "#d4e3ff",
+                      "on-primary-container": "#bbd0ff",
+                      "tertiary-container": "#535773",
+                      "on-tertiary-fixed-variant": "#414560",
+                      "surface-dim": "#dadada",
+                      "tertiary-fixed": "#dee0ff",
+                      "surface": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "primary": "#003f87",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-container-high": "#e8e8e8",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#424752",
+                      "surface-tint": "#115cb9",
+                      "tertiary": "#3c405a",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-surface": "#1b1b1b",
+                      "inverse-surface": "#303030",
+                      "background": "#f9f9f9",
+                      "on-primary-fixed-variant": "#004491",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#001c3a",
+                      "surface-container": "#eeeeee",
+                      "inverse-primary": "#acc7ff",
+                      "surface-container-low": "#f3f3f3",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "primary-fixed": "#d7e2ff",
+                      "secondary-fixed-dim": "#afc8f0",
+                      "primary-container": "#0056b3",
+                      "on-background": "#1b1b1b",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "80px",
+                      "md": "24px",
+                      "margin": "32px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "lg": "48px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "mono-data": ["JetBrains Mono"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-caps": ["JetBrains Mono"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "mono-data": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Base styles for material symbols */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Drawer animation classes */
+        .drawer-open {
+            transform: translateX(0%);
+        }
+        .drawer-closed {
+            transform: translateX(-100%);
+        }
+        .overlay-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .overlay-closed {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script src="js/redireccion.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative">
+<!-- TopAppBar -->
+<header class="bg-surface text-primary fixed top-0 left-0 w-full border-b border-outline-variant flex justify-between items-center h-16 px-margin z-40 bg-opacity-95 backdrop-blur-sm">
+<a href="index.html" aria-label="Open menu" class="text-primary hover:bg-surface-container active:scale-95 duration-150 ease-in-out p-2 -ml-2 rounded-full transition-colors flex items-center justify-center" id="menu-btn"><span class="material-symbols-outlined">menu</span></a>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-primary truncate mx-4">
+            PRECISION CORE
+        </h1>
+<button aria-label="Profile" class="text-primary hover:bg-surface-container active:scale-95 duration-150 ease-in-out p-2 -mr-2 rounded-full transition-colors flex items-center justify-center" id="abrir-config"><span class="material-symbols-outlined">account_circle</span></button>
+</header>
+<!-- NavigationDrawer Overlay -->
+<div class="fixed inset-0 bg-on-background/40 z-50 overlay-closed transition-opacity duration-300 ease-in-out" id="drawer-overlay"></div>
+<!-- NavigationDrawer -->
+<aside class="bg-surface h-screen w-72 rounded-r-none border-r border-outline-variant fixed top-0 left-0 z-50 drawer-closed transition-transform duration-300 ease-in-out flex flex-col" id="navigation-drawer">
+<!-- Drawer Header (Profile) -->
+<div class="p-md border-b border-outline-variant/50 flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden flex-shrink-0">
+<img alt="Usuario Ingeniero" class="w-full h-full object-cover" data-alt="A macro photograph of an industrial metallic gear component, brightly lit in a white laboratory setting, high tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvSHSpmjklu195FZckPczRQY4HahX6LaGBUTqlfdgX6DoXEvGP38P1ExJ7mD6aY467y7aJZTbJ1-BQE1DGr0dizJLFN0Zjix2Dp1YTAkF9zBRAnHjhK3GmasgwoOynK2xh5ZI8EXyqo3C_30PulIZ5yjzOvbfH3jVqy7n_3vAjUS_vgDvT1Bfax-3LDBJRIGUl0CzwGKFCPUaU_dS1nO5cGT1_s15FVdZmMokxl8vfT0fdubKwe-Xw"/>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-headline-md text-body-md font-semibold text-on-surface truncate">Sistemas de Control</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Admin Industrial</span>
+</div>
+</div>
+<!-- Drawer Navigation List -->
+<nav class="flex flex-col gap-base p-md flex-1 overflow-y-auto">
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:pl-2 transition-all duration-200 cursor-pointer" href="index.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<!-- Active: Proyectos -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-bold border-r-4 border-primary transition-all duration-200 cursor-pointer" href="index.html#portafolio">
+<span class="material-symbols-outlined icon-fill text-primary">precision_manufacturing</span>
+<span class="font-label-caps text-label-caps">Proyectos</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:pl-2 transition-all duration-200 cursor-pointer" href="index.html">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-caps text-label-caps">Manufactura</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:pl-2 transition-all duration-200 cursor-pointer" href="movil-admin.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-caps text-label-caps">Análisis</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:pl-2 transition-all duration-200 cursor-pointer mt-auto" href="javascript:void(0)" id="link-config">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Configuración</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 pt-[64px] pb-[88px] px-4 md:px-margin bg-background flex flex-col gap-gutter">
+<!-- Page Header -->
+<div class="pt-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Gestión de Proyectos</h2>
+<p class="font-body-md text-on-surface-variant mt-1">Resumen operativo y estado de manufactura.</p>
+</div>
+<!-- Key Stats (Horizontal Scroll for mobile) -->
+<section class="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-DEFAULT flex-shrink-0 w-40 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">TOTAL ACTIVOS</span>
+</div>
+<span class="font-mono-data text-headline-lg font-semibold text-on-surface" id="stat-total">0</span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-DEFAULT flex-shrink-0 w-40 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-secondary"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">EN PROCESO</span>
+</div>
+<span class="font-mono-data text-headline-lg font-semibold text-on-surface" id="stat-proceso">0</span>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-DEFAULT flex-shrink-0 w-40 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-on-surface-variant"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">COMPLETADOS</span>
+</div>
+<span class="font-mono-data text-headline-lg font-semibold text-on-surface" id="stat-completados">0</span>
+</div>
+</section>
+<!-- Project List (Mobile Optimized Cards) -->
+<section class="flex flex-col gap-4">
+<!-- Controls / Filters bar -->
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PROYECTOS RECIENTES</span>
+<button class="flex items-center gap-1 text-primary text-sm font-medium hover:bg-surface-container p-1 rounded transition-colors" id="btn-filtrar">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+Filtrar
+</button>
+</div>
+<div class="flex flex-col gap-4" id="admin-grid"></div>
+<!-- Load More (Ghost Button) -->
+<button class="w-full py-3 mt-2 text-primary font-label-caps text-label-caps hover:bg-surface-container transition-colors rounded-DEFAULT flex items-center justify-center gap-2" id="btn-mas">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+CARGAR MÁS PROYECTOS
+</button>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-margin right-margin md:bottom-8 md:right-8 bg-primary hover:bg-primary-container active:scale-95 text-on-primary rounded-full h-14 px-6 flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(0,63,135,0.25)] transition-all duration-200 z-30" id="btn-nuevo">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-caps text-label-caps tracking-wider font-semibold">NUEVO</span>
+</button>
+<!-- Javascript for Drawer Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const drawer = document.getElementById('navigation-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+
+            function openDrawer() {
+                drawer.classList.remove('drawer-closed');
+                drawer.classList.add('drawer-open');
+                overlay.classList.remove('overlay-closed');
+                overlay.classList.add('overlay-open');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            function closeDrawer() {
+                drawer.classList.remove('drawer-open');
+                drawer.classList.add('drawer-closed');
+                overlay.classList.remove('overlay-open');
+                overlay.classList.add('overlay-closed');
+                document.body.style.overflow = '';
+            }
+
+            menuBtn.addEventListener('click', openDrawer);
+            overlay.addEventListener('click', closeDrawer);
+        });
+    </script>
+<!-- Modal Nuevo/Editar Proyecto (mismos tokens de diseño del panel) -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-on-surface/30 backdrop-blur-sm" id="add-project-modal">
+<div class="bg-surface-container-lowest w-full max-h-[92vh] rounded-t-lg border-t border-outline-variant flex flex-col">
+<header class="flex justify-between items-center p-md border-b border-outline-variant">
+<h3 class="font-headline-md text-[18px] text-on-surface" id="modal-titulo">Nuevo Proyecto</h3>
+<button class="text-on-surface-variant p-1" onclick="document.getElementById('add-project-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span></button>
+</header>
+<div class="p-md overflow-y-auto flex-1 flex flex-col gap-md">
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-1">RENDER / FOTOGRAFÍA</label>
+<div class="border-2 border-dashed border-outline-variant rounded-DEFAULT h-40 relative overflow-hidden bg-surface-container flex flex-col items-center justify-center" id="drop-zona">
+<span class="material-symbols-outlined text-outline mb-1 text-[28px]">cloud_upload</span>
+<p class="font-body-md text-sm text-on-surface-variant">Toca para elegir archivos</p>
+<p class="font-label-caps text-[10px] text-outline">FOTOS Y VIDEO · PUEDES AGREGAR VARIOS</p>
+<img id="preview-imagen" alt="" class="hidden absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"/>
+<input type="file" accept="image/*,video/*" multiple id="input-imagen" class="absolute inset-0 opacity-0 w-full h-full z-10"/>
+</div>
+</div>
+<div class="flex items-center justify-between mt-sm"><span id="cuenta-medios" class="font-label-caps text-label-caps text-on-surface-variant">Ningún archivo todavía</span><button type="button" id="btn-mas-archivos" class="px-sm py-xs font-label-caps text-label-caps text-primary border border-outline/30 rounded flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:15px">add</span>AGREGAR ARCHIVOS</button></div>
+<div id="tira-medios" class="flex flex-wrap gap-2 mt-2"></div>
+<div id="reporte-medios" class="font-body-md text-on-surface-variant text-xs mt-2"></div>
+<p id="pista-medios" class="font-body-md text-on-surface-variant text-xs mt-1">Los archivos se van sumando: puedes agregarlos de uno en uno o varios a la vez. La primera miniatura es la portada; haz clic en otra para cambiarla. Videos de hasta 3 minutos.</p>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-1" for="project-title">TÍTULO DEL PROYECTO</label>
+<input id="project-title" type="text" placeholder="Ej. Soporte Estructural Titanio" class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-3 py-2 font-body-md text-body-md text-on-surface"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-1" for="project-category">CATEGORÍA</label>
+<select id="project-category" class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-2 py-2 font-body-md text-sm text-on-surface">
+<option>Aeroespacial</option><option>Biomédica</option><option>Automotriz</option>
+<option>Herramentales</option><option>Investigación</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-1" for="project-status">ESTADO</label>
+<select id="project-status" class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-2 py-2 font-body-md text-sm text-on-surface">
+<option>Activo (En Proceso)</option><option>Standby</option><option>Completado</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-1" for="project-desc">DESCRIPCIÓN TÉCNICA</label>
+<textarea id="project-desc" rows="4" placeholder="Especificaciones, material, tecnología empleada..." class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-3 py-2 font-body-md text-body-md text-on-surface resize-none"></textarea>
+</div>
+</div>
+<footer class="p-md border-t border-outline-variant bg-surface-container flex gap-3">
+<button type="button" class="flex-1 py-3 font-label-caps text-label-caps text-on-surface-variant border border-outline-variant rounded-DEFAULT" onclick="document.getElementById('add-project-modal').classList.add('hidden')">CANCELAR</button>
+<button type="button" id="btn-guardar" class="flex-1 py-3 font-label-caps text-label-caps bg-primary text-on-primary rounded-DEFAULT flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">save</span><span id="txt-guardar">GUARDAR</span></button>
+</footer>
+</div>
+</div>
+<script src="js/acceso.js"></script>
+<script src="js/medios.js"></script>
+<script src="js/admin.js"></script>
+</body></html>

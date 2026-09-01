@@ -1,0 +1,110 @@
+/* ============================================================
+   ESTILOS DEL VISOR DE GALERÍA
+   ------------------------------------------------------------
+   Usa los mismos colores y tipografías del diseño original:
+   azul #003f87, gris #424752, blanco #ffffff, Inter para textos
+   y JetBrains Mono para etiquetas. Esquinas de 0.25rem y bordes
+   de 1px, como el resto del sitio.
+
+   Este archivo solo afecta al visor. No toca ninguna otra parte
+   de la página.
+   ============================================================ */
+
+#visor { display: none; position: fixed; inset: 0; z-index: 100; }
+
+.visor-fondo { position: absolute; inset: 0; background: rgba(27,27,27,.88); backdrop-filter: blur(3px); }
+
+.visor-caja {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+.visor-cerrar {
+  position: absolute; top: 10px; right: 18px;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid rgba(255,255,255,.28);
+  border-radius: .25rem; color: #fff; cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.visor-cerrar:hover { background: #003f87; border-color: #003f87; }
+
+/* ---------- Zona del medio ---------- */
+.visor-lienzo { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.visor-medio { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.visor-img, .visor-video {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; border-radius: .25rem;
+  background: #1b1b1b;
+}
+
+.visor-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+  border-radius: .25rem; color: #fff; cursor: pointer;
+  transition: background .15s;
+}
+.visor-nav:hover { background: #003f87; border-color: #003f87; }
+.visor-prev { left: -8px; }
+.visor-sig { right: -8px; }
+
+.visor-cuenta {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em;
+  color: #fff; background: rgba(0,0,0,.5); padding: 4px 10px; border-radius: .25rem;
+}
+
+/* ---------- Texto ---------- */
+.visor-info { color: #fff; padding-top: 18px; flex-shrink: 0; }
+.visor-cat {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase; color: #acc7ff;
+}
+.visor-titulo { font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; margin: 6px 0 8px; line-height: 1.25; }
+.visor-desc { font-family: Inter, sans-serif; font-size: 14px; line-height: 1.6; color: #d6d8dd; max-width: 75ch; }
+.visor-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9ca3af;
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.15);
+}
+.visor-meta:empty { display: none; }
+
+/* ---------- Miniaturas ---------- */
+.visor-tiras { display: flex; gap: 8px; overflow-x: auto; padding: 14px 0 4px; flex-shrink: 0; }
+.visor-tiras::-webkit-scrollbar { height: 4px; }
+.visor-tiras::-webkit-scrollbar-thumb { background: rgba(255,255,255,.25); }
+.visor-tira {
+  position: relative; flex: 0 0 auto;
+  width: 76px; height: 54px; padding: 0;
+  border: 1px solid rgba(255,255,255,.25); border-radius: .25rem;
+  overflow: hidden; cursor: pointer; background: #1b1b1b; opacity: .55;
+  transition: opacity .15s, border-color .15s;
+}
+.visor-tira:hover { opacity: .85; }
+.visor-tira.activa { opacity: 1; border-color: #acc7ff; border-width: 2px; }
+.visor-tira img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.visor-tira-play {
+  position: absolute; inset: 0; margin: auto; width: 22px; height: 22px;
+  color: #fff; font-size: 22px; text-shadow: 0 1px 3px rgba(0,0,0,.6);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 767px) {
+  .visor-caja { padding: 44px 12px 12px; max-width: 100%; }
+  .visor-prev, .visor-sig { width: 36px; height: 48px; }
+  .visor-prev { left: 0; }
+  .visor-sig { right: 0; }
+  .visor-titulo { font-size: 17px; }
+  .visor-desc { font-size: 13px; max-height: 22vh; overflow-y: auto; }
+  .visor-tira { width: 60px; height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #visor * { transition: none !important; }
+}

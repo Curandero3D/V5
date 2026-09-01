@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Publicar tu sitio sin usar la terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--azul:#0056B3;--navy:#001F3F;--gris:#4A4E69;--linea:#E5E7EB;--fondo:#F8F9FA;--rojo:#BA1A1A;--verde:#1f883d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:#111;line-height:1.6;background:#fff;padding-bottom:80px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{background:var(--navy);color:#fff;padding:44px 0;margin-bottom:36px}
+header h1{font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.02em}
+header p{color:#acc7ff;margin-top:8px;font-size:15px}
+h2{font-size:22px;margin:48px 0 4px;padding-top:22px;border-top:2px solid var(--navy);letter-spacing:-.01em}
+h2 .num{font-family:'JetBrains Mono',monospace;color:var(--azul);font-size:14px;display:block;margin-bottom:4px}
+h3{font-size:16px;margin:26px 0 8px}
+p{margin:10px 0}
+.fig{margin:20px 0;border:1px solid var(--linea);background:var(--fondo);padding:16px;overflow-x:auto}
+.fig svg{display:block;max-width:100%;height:auto;margin:0 auto}
+.pie{font-size:12px;color:var(--gris);text-align:center;margin-top:10px;font-style:italic}
+code{font-family:'JetBrains Mono',monospace;background:#eef1f5;padding:2px 6px;font-size:.9em}
+.nota{border-left:4px solid var(--azul);background:#eef4fb;padding:14px 16px;margin:16px 0;font-size:14px}
+.alerta{border-left:4px solid var(--rojo);background:#fdeeee;padding:14px 16px;margin:16px 0;font-size:14px}
+.ok{border-left:4px solid var(--verde);background:#eef8f1;padding:14px 16px;margin:16px 0;font-size:14px}
+ol,ul{margin:10px 0 10px 22px}li{margin:7px 0}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--linea);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--fondo);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.svgtxt{font-family:Inter,sans-serif}
+.big{font-size:17px;font-weight:600;color:var(--azul)}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+<h1>Publicar tu sitio sin usar la terminal</h1>
+<p>Todo desde el navegador · unos 25 minutos</p>
+</div></header>
+
+<div class="wrap">
+
+<div class="ok">
+<b>Buena decisión.</b> Este camino te ahorra instalar Git, generar la llave
+<code>ghp_</code> y usar la ventana negra. Solo necesitas arrastrar archivos
+en una página web.
+<br><br>
+Esta guía cubre por completo el paso 2 del archivo <b>EMPIEZA-AQUI.md</b>.
+</div>
+
+<p>Los dibujos de esta guía son esquemas, no fotos. Muestran dónde está cada
+cosa. Si GitHub movió algún botón, busca el mismo texto en pantalla.</p>
+
+<!-- ═══════════ 1 ═══════════ -->
+<h2><span class="num">Parte 1</span>Crear tu cuenta</h2>
+
+<ol>
+<li>Entra a <code>github.com</code></li>
+<li>Botón <b>Sign up</b>, arriba a la derecha</li>
+<li>Correo, contraseña y nombre de usuario</li>
+<li>Te llega un código al correo. Cópialo y pégalo.</li>
+</ol>
+
+<div class="alerta">
+<b>Elige bien el nombre de usuario.</b> Aparece en direcciones públicas.
+Algo como <code>imermoreno</code>. No un apodo.
+</div>
+
+<!-- ═══════════ 2 ═══════════ -->
+<h2><span class="num">Parte 2</span>Crear el espacio para tu sitio</h2>
+
+<p>En github.com, arriba a la derecha junto a tu foto, hay un signo <b>+</b>.
+Clic ahí → <b>New repository</b>.</p>
+
+<div class="fig">
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" class="svgtxt">
+  <rect x="10" y="10" width="680" height="360" fill="#fff" stroke="#c8ccd4"/>
+  <rect x="10" y="10" width="680" height="36" fill="#24292f"/>
+  <text x="26" y="33" font-size="13" fill="#fff" font-weight="600">GitHub</text>
+  <text x="648" y="34" font-size="16" fill="#fff">+ ▾</text>
+  <circle cx="655" cy="28" r="15" fill="none" stroke="#0056B3" stroke-width="2"/>
+  <text x="30" y="76" font-size="17" font-weight="700">Create a new repository</text>
+
+  <text x="30" y="112" font-size="12" font-weight="600">Repository name *</text>
+  <rect x="30" y="120" width="300" height="30" fill="#fff" stroke="#0056B3" stroke-width="2"/>
+  <text x="40" y="140" font-size="13" font-family="JetBrains Mono">sitio-lma</text>
+  <text x="345" y="140" font-size="11" fill="#1f883d">✓ available</text>
+
+  <circle cx="40" cy="196" r="7" fill="#fff" stroke="#0056B3" stroke-width="2"/>
+  <circle cx="40" cy="196" r="3.5" fill="#0056B3"/>
+  <text x="56" y="201" font-size="13" font-weight="600">Public</text>
+  <circle cx="40" cy="224" r="7" fill="#fff" stroke="#c8ccd4" stroke-width="2"/>
+  <text x="56" y="229" font-size="13">Private</text>
+
+  <text x="30" y="272" font-size="12" font-weight="600">Initialize this repository with:</text>
+  <rect x="32" y="282" width="13" height="13" fill="#fff" stroke="#BA1A1A" stroke-width="2"/>
+  <text x="54" y="293" font-size="12">Add a README file</text>
+  <rect x="32" y="304" width="13" height="13" fill="#fff" stroke="#BA1A1A" stroke-width="2"/>
+  <text x="54" y="315" font-size="12">Add .gitignore</text>
+  <rect x="210" y="304" width="13" height="13" fill="#fff" stroke="#BA1A1A" stroke-width="2"/>
+  <text x="232" y="315" font-size="12">Choose a license</text>
+  <text x="350" y="300" font-size="12" fill="#BA1A1A" font-weight="700">◀ LAS TRES VACÍAS</text>
+
+  <rect x="540" y="330" width="130" height="32" fill="#1f883d"/>
+  <text x="605" y="351" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">Create repository</text>
+</svg>
+<div class="pie">Nombre <b>sitio-lma</b>, deja <b>Public</b>, y <b>no marques ninguna de las tres casillas</b>.</div>
+</div>
+
+<div class="alerta">
+<b>Si marcas alguna casilla el siguiente paso se complica.</b> Déjalas vacías.
+</div>
+
+<!-- ═══════════ 3 ═══════════ -->
+<h2><span class="num">Parte 3</span>Subir tus archivos arrastrando</h2>
+
+<p>Después de crear el repositorio, GitHub te muestra una página con
+instrucciones. Ignora casi todo. Busca el enlace que dice:</p>
+
+<p class="big">uploading an existing file</p>
+
+<div class="fig">
+<svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" class="svgtxt">
+  <rect x="10" y="10" width="680" height="190" fill="#fff" stroke="#c8ccd4"/>
+  <text x="30" y="44" font-size="16" font-weight="700">Quick setup</text>
+  <text x="30" y="72" font-size="13" fill="#4A4E69">Get started by</text>
+  <text x="130" y="72" font-size="13" fill="#0056B3" text-decoration="underline">creating a new file</text>
+  <text x="253" y="72" font-size="13" fill="#4A4E69">or</text>
+  <text x="277" y="72" font-size="13" fill="#0056B3" font-weight="700" text-decoration="underline">uploading an existing file</text>
+  <rect x="272" y="56" width="200" height="22" fill="none" stroke="#BA1A1A" stroke-width="2"/>
+  <path d="M372 84 L372 108" stroke="#BA1A1A" stroke-width="2"/>
+  <path d="M372 108 l-5 -9 h10 z" fill="#BA1A1A"/>
+  <text x="372" y="126" text-anchor="middle" font-size="12" fill="#BA1A1A" font-weight="600">Clic aquí</text>
+  <rect x="30" y="146" width="640" height="38" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="44" y="170" font-size="11" font-family="JetBrains Mono" fill="#57606a">…git remote add origin… ← ignora todo esto</text>
+</svg>
+<div class="pie">Ese enlace pequeño es el que te lleva a la subida por arrastre.</div>
+</div>
+
+<h3>Prepara la selección</h3>
+
+<p>Abre el Explorador de Windows y <b>entra</b> a la carpeta
+<code>C:\proyectos\sitio-lma</code>.</p>
+
+<p>Presiona <b>Ctrl + E</b> para seleccionar todo lo que hay adentro.</p>
+
+<div class="alerta">
+<b>Este es el error que más se comete.</b> Tienes que arrastrar lo que está
+<b>dentro</b> de la carpeta, no la carpeta misma.
+<br><br>
+Si arrastras la carpeta <code>sitio-lma</code> completa, tu sitio quedará en
+<code>tudominio.com/sitio-lma/index.html</code> en lugar de
+<code>tudominio.com</code>, y Cloudflare no lo encontrará.
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" class="svgtxt">
+  <text x="20" y="26" font-size="13" font-weight="700" fill="#1f883d">✓ CORRECTO — estás DENTRO y seleccionas el contenido</text>
+  <rect x="20" y="36" width="310" height="150" fill="#fff" stroke="#1f883d" stroke-width="2"/>
+  <rect x="20" y="36" width="310" height="26" fill="#F3F3F3"/>
+  <text x="30" y="54" font-size="10" font-family="JetBrains Mono" fill="#4A4E69">C:\proyectos\sitio-lma</text>
+  <g font-size="11">
+    <rect x="28" y="70" width="294" height="16" fill="#cfe4f7"/><text x="34" y="82">📁 admin-cms</text>
+    <rect x="28" y="88" width="294" height="16" fill="#cfe4f7"/><text x="34" y="100">📁 data</text>
+    <rect x="28" y="106" width="294" height="16" fill="#cfe4f7"/><text x="34" y="118">📁 img &nbsp;&nbsp; 📁 js &nbsp;&nbsp; 📁 herramientas</text>
+    <rect x="28" y="124" width="294" height="16" fill="#cfe4f7"/><text x="34" y="136">📄 index.html</text>
+    <rect x="28" y="142" width="294" height="16" fill="#cfe4f7"/><text x="34" y="154">📄 admin.html &nbsp; 📄 movil-admin.html …</text>
+  </g>
+  <text x="30" y="178" font-size="10" fill="#1f883d" font-weight="600">todo azul = seleccionado</text>
+
+  <text x="370" y="26" font-size="13" font-weight="700" fill="#BA1A1A">✕ INCORRECTO — arrastras la carpeta</text>
+  <rect x="370" y="36" width="310" height="150" fill="#fff" stroke="#BA1A1A" stroke-width="2"/>
+  <rect x="370" y="36" width="310" height="26" fill="#F3F3F3"/>
+  <text x="380" y="54" font-size="10" font-family="JetBrains Mono" fill="#4A4E69">C:\proyectos</text>
+  <rect x="378" y="72" width="294" height="18" fill="#f7cfcf"/>
+  <text x="384" y="85" font-size="11">📁 sitio-lma</text>
+  <text x="380" y="112" font-size="10" fill="#BA1A1A">esto crearía tudominio.com/<b>sitio-lma</b>/index.html</text>
+  <text x="380" y="130" font-size="10" fill="#BA1A1A">y el sitio no cargaría</text>
+
+  <text x="20" y="216" font-size="12" font-weight="600">Atajo: entra a la carpeta y presiona Ctrl + E para seleccionar todo el contenido.</text>
+</svg>
+<div class="pie">Izquierda: bien. Derecha: mal.</div>
+</div>
+
+<h3>Arrastra</h3>
+
+<p>Con todo seleccionado, arrástralo desde el Explorador hasta el recuadro
+punteado de la página de GitHub.</p>
+
+<div class="fig">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" class="svgtxt">
+  <rect x="10" y="10" width="680" height="240" fill="#fff" stroke="#c8ccd4"/>
+  <text x="30" y="42" font-size="16" font-weight="700">Upload files</text>
+  <rect x="30" y="60" width="640" height="110" fill="#f6f8fa" stroke="#0056B3" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="350" y="105" text-anchor="middle" font-size="14" font-weight="600" fill="#0056B3">Drag files here to add them to your repository</text>
+  <text x="350" y="132" text-anchor="middle" font-size="12" fill="#57606a">or choose your files</text>
+  <text x="350" y="152" text-anchor="middle" font-size="20">📁 ⤵</text>
+
+  <text x="30" y="200" font-size="12" font-weight="600">Commit changes</text>
+  <rect x="30" y="208" width="380" height="26" fill="#fff" stroke="#c8ccd4"/>
+  <text x="40" y="226" font-size="12" font-family="JetBrains Mono" fill="#57606a">Sitio inicial</text>
+  <rect x="540" y="206" width="130" height="30" fill="#1f883d"/>
+  <text x="605" y="226" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">Commit changes</text>
+</svg>
+<div class="pie">Suelta los archivos en el recuadro punteado, escribe una nota y confirma.</div>
+</div>
+
+<ol>
+<li>Suelta los archivos en el recuadro punteado</li>
+<li>Espera. Verás la lista subiendo. Con tus ~27 archivos tarda menos de un minuto.</li>
+<li>Abajo, donde dice <b>Commit changes</b>, escribe <code>Sitio inicial</code></li>
+<li>Botón verde <b>Commit changes</b></li>
+</ol>
+
+<div class="ok">
+<b>Comprobación.</b> La página se recarga y debes ver la lista de tus carpetas:
+<code>admin-cms</code>, <code>data</code>, <code>herramientas</code>,
+<code>img</code>, <code>js</code>, y abajo tus archivos <code>.html</code>.
+<br><br>
+<b>Que <code>index.html</code> se vea en esta lista principal es la señal de que
+lo hiciste bien.</b> Si en cambio ves una sola carpeta llamada
+<code>sitio-lma</code>, arrastraste la carpeta en vez del contenido: bórrala y
+repite.
+</div>
+
+<h3>Si arrastrar no funciona</h3>
+<p>Algunos navegadores no permiten arrastrar carpetas. Usa el enlace
+<b>choose your files</b>, pero ojo: ese selector solo toma archivos sueltos,
+no carpetas. En ese caso sube primero los <code>.html</code>, y luego repite
+la operación entrando a cada carpeta del repositorio con
+<b>Add file → Upload files</b>.</p>
+
+<p>Más fácil: usa Chrome o Edge, donde el arrastre de carpetas sí funciona.</p>
+
+<!-- ═══════════ 4 ═══════════ -->
+<h2><span class="num">Parte 4</span>Publicarlo en internet</h2>
+
+<ol>
+<li>Entra a <code>dash.cloudflare.com</code> → <b>Sign up</b>. No pide tarjeta.</li>
+<li>Menú de la izquierda: <b>Workers &amp; Pages</b></li>
+<li>Botón <b>Create</b> → pestaña <b>Pages</b> → <b>Connect to Git</b></li>
+<li><b>Connect GitHub</b> → te manda a GitHub → elige
+<b>Only select repositories</b> → marca <code>sitio-lma</code> →
+<b>Install &amp; Authorize</b></li>
+<li>De regreso en Cloudflare, selecciona <code>sitio-lma</code> →
+<b>Begin setup</b></li>
+</ol>
+
+<h3>La configuración</h3>
+<p>Aquí es donde más gente se equivoca. Llénala exactamente así:</p>
+
+<div class="fig">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" class="svgtxt">
+  <rect x="10" y="10" width="680" height="280" fill="#fff" stroke="#c8ccd4"/>
+  <text x="30" y="42" font-size="16" font-weight="700">Set up builds and deployments</text>
+
+  <text x="30" y="76" font-size="12" font-weight="600">Project name</text>
+  <rect x="30" y="84" width="280" height="26" fill="#fff" stroke="#c8ccd4"/>
+  <text x="40" y="102" font-size="12" font-family="JetBrains Mono">sitio-lma</text>
+
+  <text x="30" y="134" font-size="12" font-weight="600">Production branch</text>
+  <rect x="30" y="142" width="280" height="26" fill="#fff" stroke="#c8ccd4"/>
+  <text x="40" y="160" font-size="12" font-family="JetBrains Mono">main ▾</text>
+
+  <text x="30" y="192" font-size="12" font-weight="600">Framework preset</text>
+  <rect x="30" y="200" width="280" height="26" fill="#fff" stroke="#0056B3" stroke-width="2"/>
+  <text x="40" y="218" font-size="12" font-family="JetBrains Mono">None ▾</text>
+
+  <text x="360" y="76" font-size="12" font-weight="600">Build command</text>
+  <rect x="360" y="84" width="280" height="26" fill="#fff" stroke="#0056B3" stroke-width="2"/>
+  <text x="370" y="102" font-size="11" fill="#BA1A1A" font-style="italic">(déjalo vacío)</text>
+
+  <text x="360" y="134" font-size="12" font-weight="600">Build output directory</text>
+  <rect x="360" y="142" width="280" height="26" fill="#fff" stroke="#0056B3" stroke-width="2"/>
+  <text x="370" y="161" font-size="14" font-family="JetBrains Mono" font-weight="700">/</text>
+  <text x="392" y="161" font-size="11" fill="#BA1A1A">← una sola diagonal</text>
+
+  <rect x="500" y="240" width="170" height="34" fill="#f6821f"/>
+  <text x="585" y="262" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">Save and Deploy</text>
+</svg>
+<div class="pie">Framework preset en <b>None</b>, build command vacío, y output directory con una diagonal.</div>
+</div>
+
+<p>Espera dos minutos. Verás texto corriendo. Al final dirá <b>Success</b> y te
+dará tu dirección:</p>
+
+<p class="big">https://sitio-lma.pages.dev</p>
+
+<div class="ok">
+<b>Tu sitio ya está en internet.</b> Ábrelo desde el celular para ver que se
+vea bien ahí también.
+</div>
+
+<!-- ═══════════ 5 ═══════════ -->
+<h2><span class="num">Parte 5</span>Cómo actualizarlo de ahora en adelante</h2>
+
+<p>Todo desde github.com. Nunca vuelves a entrar a Cloudflare: él solo detecta
+los cambios y republica en un minuto.</p>
+
+<h3>Cambiar un archivo</h3>
+<ol>
+<li>Entra a tu repositorio, navega hasta el archivo</li>
+<li>Clic en el <b>icono del lápiz</b>, arriba a la derecha del recuadro</li>
+<li>Edita</li>
+<li>Abajo: <b>Commit changes</b> → <b>Commit changes</b></li>
+</ol>
+
+<h3>Subir archivos nuevos</h3>
+<ol>
+<li>Entra a la carpeta donde van (por ejemplo <code>img</code> →
+<code>portafolio</code>)</li>
+<li><b>Add file</b> → <b>Upload files</b></li>
+<li>Arrastra y confirma</li>
+</ol>
+
+<h3>Agregar un proyecto al portafolio</h3>
+<p>Es el mismo procedimiento, en dos partes:</p>
+<table>
+<tr><th>Qué</th><th>Dónde</th></tr>
+<tr><td>La foto</td><td>Carpeta <code>img/portafolio/</code> → Add file → Upload files</td></tr>
+<tr><td>Los datos</td><td>Archivo <code>data/proyectos.json</code> → lápiz → editar</td></tr>
+</table>
+
+<div class="nota">
+<b>El panel de administración encaja perfecto con este camino.</b>
+Ábrelo en <code>sitio-lma.pages.dev/admin.html</code>, agrega tus proyectos con
+el formulario, y al terminar descarga el <code>proyectos.json</code> desde
+"Admin / System Ops". Ese archivo lo subes a la carpeta <code>data</code>
+reemplazando el anterior, y las fotos que se descargaron solas las subes a
+<code>img/portafolio</code>. Sin terminal en ningún momento.
+</div>
+
+<!-- ═══════════ imágenes ═══════════ -->
+<h2><span class="num">Pendiente</span>Las fotos prestadas</h2>
+
+<p>Recuerda que las fotos de tu sitio todavía son enlaces a servidores de
+Google, donde Stitch las dejó. Funcionan hoy, pero pueden desaparecer.</p>
+
+<p>El script que las rescata (<code>herramientas\descargar-imagenes.py</code>)
+sí necesita la terminal. <b>No es urgente hacerlo ahora.</b> Publica primero.</p>
+
+<p>Cuando quieras resolverlo sin terminal, hay una forma manual: abrir tu sitio,
+hacer <b>clic derecho sobre cada imagen → Guardar imagen como</b>, subirlas a
+<code>img/portafolio</code> desde github.com, y corregir las rutas en
+<code>data/proyectos.json</code>. Son unas trece imágenes.</p>
+
+<!-- ═══════════ problemas ═══════════ -->
+<h2><span class="num">Si algo falla</span>Los tres problemas típicos</h2>
+
+<h3>Cloudflare dice Success pero el sitio sale en blanco o da 404</h3>
+<p>Dos causas posibles:</p>
+<ul>
+<li>El <b>Build output directory</b> no es <code>/</code>. Corrígelo en
+<b>Settings → Builds &amp; deployments → Configure Production deployments</b>,
+guarda y dale <b>Retry deployment</b>.</li>
+<li>Subiste la carpeta en vez del contenido. Entra a tu repositorio: si ves una
+sola carpeta <code>sitio-lma</code> en la lista principal, ese es el problema.
+Bórrala y vuelve a subir el contenido.</li>
+</ul>
+
+<h3>La galería del portafolio sale vacía en el sitio publicado</h3>
+<p>El archivo <code>data/proyectos.json</code> no subió, o tiene un error de
+sintaxis. Ábrelo en github.com y comprueba que se vea el contenido. Si lo
+editaste, valídalo en <code>jsonlint.com</code> antes de guardar.</p>
+
+<h3>Subí un archivo mal y quiero borrarlo</h3>
+<p>Entra al archivo en github.com, clic en los <b>tres puntos</b> arriba a la
+derecha → <b>Delete file</b> → <b>Commit changes</b>.</p>
+
+<div class="nota" style="margin-top:40px">
+<b>Si te atoras.</b> Anota en qué parte te quedaste y qué dice exactamente el
+mensaje en pantalla. Con eso se resuelve rápido.
+</div>
+
+</div>
+</body>
+</html>

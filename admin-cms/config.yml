@@ -1,0 +1,44 @@
+# ============================================================
+#  CAMBIA ESTAS DOS LÍNEAS ANTES DE USAR EL PANEL:
+#    repo:      tu-usuario-de-github/nombre-del-repositorio
+#    base_url:  la URL de tu Cloudflare Worker de autenticación
+#  Mientras no lo configures, el sitio funciona igual.
+#  Puedes editar data/proyectos.json a mano desde github.com.
+# ============================================================
+backend:
+  name: github
+  repo: TU-USUARIO/sitio-lma
+  branch: main
+  base_url: https://TU-WORKER.workers.dev
+
+media_folder: "img/portafolio"
+public_folder: "/img/portafolio"
+
+locale: "es"
+
+collections:
+  - name: "portafolio"
+    label: "Portafolio"
+    files:
+      - name: "proyectos"
+        label: "Proyectos"
+        file: "data/proyectos.json"
+        format: "json"
+        fields:
+          - label: "Proyectos"
+            name: "proyectos"
+            widget: "list"
+            label_singular: "Proyecto"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "ID interno", name: "id", widget: "string", hint: "Ej. PROJ-905" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options: ["Robótica", "Metrología", "Manufactura Aditiva", "Automatización", "Ingeniería Inversa", "Herramentales", "Diseño CAD"]
+              - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Cliente o sector", name: "cliente", widget: "string", required: false }
+              - { label: "Fecha", name: "fecha", widget: "string", hint: "Formato AAAA-MM, ej. 2026-08" }
+              - { label: "Destacado", name: "destacado", widget: "boolean", default: false }

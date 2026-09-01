@@ -36,27 +36,12 @@
         "tipo": "video",
         "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video.mp4",
         "poster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-portada.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-2.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp"
       }
     ],
     "galeria": [
       "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp",
       "/img/portafolio/herramental-de-gripper-para-linea-de-lle-2.webp",
-      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp",
-      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp",
-      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-2.webp",
-      "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp"
+      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp"
     ],
     "video": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video.mp4",
     "videoPoster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-portada.webp"

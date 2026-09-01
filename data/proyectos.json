@@ -4,20 +4,20 @@
     "titulo": "Diseño e Implementación de Pucks de Transporte Impresos en Resina ABS-Like para Línea de Llenado y Empaque",
     "categoria": "Biomédica",
     "estado": "Completado",
-    "imagen": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran.webp",
+    "imagen": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video-portada.webp",
     "descripcion": "Diseño, validación e implementación de pucks (portapiezas) fabricados mediante manufactura aditiva por estereolitografía en resina tipo ABS-like, destinados al transporte y posicionamiento de botellas a lo largo de la línea de llenado y empaque. La solución sustituyó herramental convencional (mecanizado o inyectado) por piezas impresas en 3D, permitiendo:\nIteración rápida de geometría para adaptarse a distintos formatos/diámetros de envase\nReducción de tiempo de entrega frente a herramental tradicional\nAjuste dimensional fino para garantizar guiado correcto en estrellas transportadoras, estaciones de llenado y tapado\nResistencia mecánica y estabilidad dimensional adecuadas para operación continua en línea de producción",
     "cliente": "",
     "fecha": "2026-08",
     "destacado": false,
     "medios": [
       {
-        "tipo": "imagen",
-        "src": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran.webp"
-      },
-      {
         "tipo": "video",
         "src": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video.mp4",
         "poster": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video-portada.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran.webp"
       },
       {
         "tipo": "video",

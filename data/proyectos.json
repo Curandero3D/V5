@@ -70,6 +70,11 @@
         "tipo": "video",
         "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-2.mp4",
         "poster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-2-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-3.mp4",
+        "poster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-3-portada.webp"
       }
     ],
     "galeria": [

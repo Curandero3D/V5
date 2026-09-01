@@ -1,5 +1,52 @@
 [
   {
+    "id": "PROJ-4968",
+    "titulo": "herramental de gripper para línea de llenado automatizada",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp",
+    "medios": [
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-2.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video.mp4",
+        "poster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-portada.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-4.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-2.mp4",
+        "poster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-2-portada.webp"
+      }
+    ],
+    "galeria": [
+      "/img/portafolio/herramental-de-gripper-para-linea-de-lle.webp",
+      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-2.webp",
+      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-3.webp",
+      "/img/portafolio/herramental-de-gripper-para-linea-de-lle-4.webp"
+    ],
+    "descripcion": "El problema\n\nEn una línea de llenado y empaque automatizada (sistema de pick-and-place de 4 vías), el gripper neumático encargado de levantar los tarros de crema desde la banda transportadora no lograba sujetarlos de forma confiable: los tarros se resbalaban durante el ciclo de recolección, generando caídas de producto y paros de línea.\n\nLa solución\n\nDiseñé y fabriqué por impresión 3D — combinando resina y filamentos técnicos según el requerimiento de cada componente — un nuevo par de uñas de contacto para el gripper (referencia interna \"Domo 100\"), con tres decisiones clave de diseño:\n\nCavidad interior perfilada a la curvatura exacta del domo del tarro, maximizando el área de contacto entre la uña y el envase.\nSuperficie de agarre acanalada con goma impresa en TPU shore 75, que incrementa la fricción de sujeción sin marcar ni dañar el envase durante el ciclo de pick-and-place.\nLengüeta de montaje con barreno pasante, compatible con el sistema de sujeción existente del brazo — instalación directa, sin modificar el resto del gripper ni el resto de la celda.\nEl resultado\n\nLa pieza impresa se integró directamente en la línea en producción, sin modificaciones adicionales al gripper ni al sistema, y eliminó las caídas de tarro durante el ciclo de recolección — una solución de bajo costo y tiempo de entrega corto frente a maquinar la pieza de forma tradicional.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video.mp4",
+    "videoPoster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-portada.webp"
+  },
+  {
     "id": "PROJ-9857",
     "titulo": "Diseño e Implementación de Pucks de Transporte Impresos en Resina ABS-Like para Línea de Llenado y Empaque",
     "categoria": "Biomédica",

@@ -1,5 +1,52 @@
 [
   {
+    "id": "PROJ-0587",
+    "titulo": "Pucks de repuesto para línea de llenado, formato 27 ml — NIVEA",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado-.webp",
+    "medios": [
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado-.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video.mp4",
+        "poster": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-2.mp4",
+        "poster": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-2-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-3.mp4",
+        "poster": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-3-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-4.mp4",
+        "poster": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-4-portada.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--2.webp"
+      }
+    ],
+    "galeria": [
+      "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado-.webp",
+      "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--2.webp"
+    ],
+    "descripcion": "Problema\nLa línea de llenado y empaquetado de NIVEA operaba con pucks —los carriers que estabilizan la botella mientras recorre curvas, ruedas estrella, llenado y taponado— que se habían desgastado y roto con el uso. Sustituirlos por piezas OEM del fabricante del equipo implicaba costos elevados y tiempos de entrega largos, con el riesgo de paros de línea mientras se esperaba el repuesto.\n\nSolución\nDiseñé y fabriqué un lote completo de pucks a medida para el formato de botella de 27 ml:\n\nGeometría de la cavidad replicada a partir del formato original, para encajar sin modificaciones en el sistema de transporte existente (banda modular, guías y estrellas de la línea).\nProducción combinando impresión 3D en resina y en filamentos técnicos, según el balance de precisión dimensional y resistencia mecánica requerido para cada punto de la línea.\nLote de producción completo (~150 piezas), no solo un prototipo de validación.\n\nResultado\nReemplazo de las piezas desgastadas con un costo y tiempo de entrega considerablemente menor que adquirir los pucks originales del fabricante, sin detener la operación de la línea.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video.mp4",
+    "videoPoster": "/img/portafolio/pucks-de-repuesto-para-linea-de-llenado--video-portada.webp"
+  },
+  {
     "id": "PROJ-4968",
     "titulo": "herramental de gripper para línea de llenado automatizada",
     "categoria": "Herramentales",

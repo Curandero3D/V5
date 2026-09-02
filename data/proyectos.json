@@ -1,5 +1,41 @@
 [
   {
+    "id": "PROJ-4791",
+    "titulo": "Ingeniería inversa de eslabón de banda transportadora — Jumex",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-portada.webp",
+    "medios": [
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video.mp4",
+        "poster": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-2.mp4",
+        "poster": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-2-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-3.mp4",
+        "poster": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-3-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-4.mp4",
+        "poster": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-4-portada.webp"
+      }
+    ],
+    "galeria": [],
+    "descripcion": "Problema\nUna línea de banda transportadora modular en planta de Jumex operaba con eslabones cuyo fabricante original, aunque seguía activo, cotizaba el repuesto con un costo y un tiempo de entrega poco viables para la operación — exponiendo a la línea a un paro prolongado ante cualquier falla adicional del tramo desgastado.\n\nSolución\nSe ejecutó un levantamiento de ingeniería inversa completo, de pieza física a producción:\n\nEscaneo 3D del eslabón original para capturar su geometría exacta, incluyendo los nudillos de articulación y la lengüeta de conexión entre eslabones.\nReconstrucción del modelo CAD paramétrico a partir de la nube de puntos, validando ajuste y funcionalidad de la articulación.\nFabricación de eslabones de reemplazo por impresión 3D, dimensionalmente equivalentes al original y compatibles con el resto de la banda sin modificaciones.\n\nResultado\nReemplazo funcional del tramo de banda a un costo y tiempo de entrega muy por debajo de la cotización del fabricante original, con la geometría de articulación validada contra la pieza física y material superior al original.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video.mp4",
+    "videoPoster": "/img/portafolio/ingenieria-inversa-de-eslabon-de-banda-t-video-portada.webp"
+  },
+  {
     "id": "PROJ-0587",
     "titulo": "Pucks de repuesto para línea de llenado, formato 27 ml — NIVEA",
     "categoria": "Herramentales",

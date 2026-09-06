@@ -1,5 +1,62 @@
 [
   {
+    "id": "PROJ-8611",
+    "titulo": "Escantillones de control para etiquetado — NIVEA",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/escantillones-de-control-para-etiquetado.webp",
+    "medios": [
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-video.mp4",
+        "poster": "/img/portafolio/escantillones-de-control-para-etiquetado-video-portada.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-2.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-3.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-4.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-5.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-6.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/escantillones-de-control-para-etiquetado-7.webp"
+      }
+    ],
+    "galeria": [
+      "/img/portafolio/escantillones-de-control-para-etiquetado.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-2.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-3.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-4.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-5.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-6.webp",
+      "/img/portafolio/escantillones-de-control-para-etiquetado-7.webp"
+    ],
+    "descripcion": "Problema\nNo existía una forma sistemática de verificar que las botellas salieran de la etiquetadora con la etiqueta en la posición correcta y la tapa dispensadora orientada respecto al cuerpo. La verificación dependía de inspección visual, poco confiable y sin un criterio objetivo de paso/no paso.\n\nSolución\nDiseñé y fabriqué por impresión 3D en resina una colección de escantillones de control:\n\nEscantillón de silueta completa, con una ventana recortada que reproduce el contorno y la posición esperada de la etiqueta — si la etiqueta queda dentro de la ventana, la posición es correcta.\nEscantillones cilíndricos de cuello (rosca 27/400) con guía interna, uno por cada línea de producción (numerados 2, 3, 4 y 8), para verificar que la orientación de la tapa dispensadora coincide con la referencia del cuerpo de la botella.\nCriterio de inspección binario (pasa/no pasa), replicable por cualquier operador sin depender de criterio visual subjetivo.\n\nResultado\nControl de calidad estandarizado y objetivo para posición de etiqueta y orientación de tapa, aplicable de forma consistente en las distintas líneas de producción.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/escantillones-de-control-para-etiquetado-video.mp4",
+    "videoPoster": "/img/portafolio/escantillones-de-control-para-etiquetado-video-portada.webp"
+  },
+  {
     "id": "PROJ-4791",
     "titulo": "Ingeniería inversa de eslabón de banda transportadora — Jumex",
     "categoria": "Herramentales",

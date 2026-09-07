@@ -1,82 +1,5 @@
 [
   {
-    "id": "PROJ-7412",
-    "titulo": "Plantilla para prueba de fugas por inmersión",
-    "categoria": "Herramentales",
-    "estado": "Completado",
-    "imagen": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp",
-    "medios": [
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-10.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-11.webp"
-      },
-      {
-        "tipo": "video",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
-        "poster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
-      }
-    ],
-    "galeria": [
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-10.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-11.webp"
-    ],
-    "descripcion": "RECUPERADO — edita esta descripción desde el panel. Dispositivo para prueba de fugas por inmersión.",
-    "cliente": "",
-    "fecha": "2026-08",
-    "destacado": false,
-    "video": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
-    "videoPoster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
-  },
-  {
     "id": "PROJ-6189",
     "titulo": "Herramienta de ventosa para manipulación de tarros emplayados — NIVEA  Problema",
     "categoria": "Herramentales",
@@ -390,15 +313,15 @@
     "estado": "Completado"
   },
   {
-    "id": "PROJ-874",
-    "titulo": "Impresión de Refacciones Metálicas",
-    "categoria": "Manufactura Aditiva",
-    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuBGxCPP9VK-S9oSyWiSgKUZ5NB6pesNM2LOaN5hsOY__JRrpQ6GAzKPvGdyoYzjW6cTDGKHIynlc10wJU5qmrwN6VRuPAqMqyMYoqRZUdWBg1MU5Ye9j7o54Ilpl3N-R5M1U0C7ZPOmfjbXDt41GJhocKMp9rLYongtSNcU91HUvt5rrzb7f0C9CYH_ZS8Ukt0qXfa1IA3qNCQFkW8xvm0HW72MZoj4OXnhfL6_5MaM3wg_1bQywn-3",
-    "descripcion": "Fabricación de componentes críticos en acero inoxidable mediante DMLS, eliminando la necesidad de herramentales costosos para lotes pequeños.",
-    "cliente": "Mantenimiento Industrial",
-    "fecha": "2026-01",
-    "destacado": false,
-    "estado": "Completado"
+    "id": "PROJ-882",
+    "titulo": "Escaneo de Motores de Alta Precisión",
+    "categoria": "Metrología",
+    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuDXk5p9hy-wnRAs0pzvHtk7u1cL_VTbNrId9c9MTgkPzLgCdVstwDFif_H7IQDIdNIUOb7nW9weurOUrPQXDMqY4L1P2bvNs7PMKEctHSM-07SHkIaCCagsWgajv96aF0u8GLjn4tgxVaZ0Cj3AqZX43Y3acTM5C8l7FS0HnihL77BJ1oCeS5oCqKTrsJrU9ngXC1k7g5DJV2zCDg7c1rDNhIKFtf5a0c7TK_YXdLaQKxsKEAbhJeYj",
+    "descripcion": "Digitalización 3D de monoblocks mediante láser azul para control de calidad dimensional y reconstrucción de superficies críticas.",
+    "cliente": "Industria de Manufactura",
+    "fecha": "2026-03",
+    "destacado": true,
+    "estado": "Activo (En Proceso)"
   },
   {
     "id": "PROJ-860",

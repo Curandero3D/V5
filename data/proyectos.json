@@ -1,72 +1,5 @@
 [
   {
-    "id": "PROJ-3937",
-    "titulo": "Plantilla para prueba de fugas por inmersión — Componente iCAC",
-    "categoria": "Automotriz",
-    "estado": "Completado",
-    "imagen": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp",
-    "medios": [
-      {
-        "tipo": "video",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
-        "poster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp"
-      },
-      {
-        "tipo": "imagen",
-        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp"
-      }
-    ],
-    "galeria": [
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp",
-      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp"
-    ],
-    "descripcion": "Un fabricante automotriz necesitaba verificar la hermeticidad del iCAC (indirect Charge Air Cooler) antes de su liberación, mediante el método de inmersión en agua: presurizar la pieza con aire y sumergirla para detectar fugas por la formación de burbujas. Esto requería un dispositivo que sellara todos los puertos del componente de forma simultánea, repetible y sin dañar la pieza durante la prueba.\n\nSolución\nDiseñé el arreglo completo de la plantilla de prueba:\n\nTapones de sellado en los puertos laterales, montados sobre brazos pivotantes y accionados por clamps de palanca (toggle clamps), que se cierran manualmente sobre el componente para sellar sus dos puertos principales.\nMecanismo central de sujeción y presurización, con un segundo par de clamps de palanca y una conexión rápida de aire para alimentar la presión de prueba una vez sellada la pieza.\nBase estructural aligerada, dimensionada para permitir la inmersión completa del conjunto en el tanque de agua sin comprometer la rigidez de sujeción.\nFabricación combinando maquinado en metal (elementos estructurales y de sujeción) e impresión 3D (componentes de sellado y adaptación geométrica al puerto del iCAC).\n\nResultado\nPlantilla de prueba funcional que permite verificar la hermeticidad del iCAC de forma manual, repetible y segura, sellando los puertos de la pieza en un solo montaje antes de la inmersión.",
-    "cliente": "",
-    "fecha": "2026-09",
-    "destacado": false,
-    "video": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
-    "videoPoster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
-  },
-  {
     "id": "PROJ-6189",
     "titulo": "Herramienta de ventosa para manipulación de tarros emplayados — NIVEA  Problema",
     "categoria": "Herramentales",
@@ -400,16 +333,5 @@
     "fecha": "2026-01",
     "destacado": false,
     "estado": "Completado"
-  },
-  {
-    "id": "PROJ-860",
-    "titulo": "Línea de Producción Automatizada",
-    "categoria": "Automatización",
-    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuA0u4O25IlhUhAOKUdXt6TRWnJLio1SFVC59zws018E6tEYj6prve0gDmDDEsCB0iGbCBmgFmVWPtYYq79TzOHcnti6V4vX1c9P1dmJolrIE_VTGsUwOiW6kUeHppdqLLot_Tj0LjKwbOJdtZvsM7o3gFCbWNzo0xbnkJIwatgowciOf__8j2llsXuVWlULCSTrdXFsTjaQEX5uL4S8YUf3pEpWQ9IfVGn8W9D1h3t5H293vYnmCJnl",
-    "descripcion": "Diseño y puesta en marcha de línea de soldadura automatizada con monitoreo en tiempo real y sistemas de seguridad integrados.",
-    "cliente": "Bienes de Consumo",
-    "fecha": "2025-11",
-    "destacado": false,
-    "estado": "Activo (En Proceso)"
   }
 ]

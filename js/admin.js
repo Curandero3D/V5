@@ -37,6 +37,7 @@
   let shaJson = null;     // versión del archivo en GitHub
   let sucio = false;      // hay cambios sin guardar
   let filtroCategoria = null;
+  const borradosEnEstaSesion = new Set();
 
   const cfg = {
     get repo()  { return localStorage.getItem('lma_repo')  || ''; },
@@ -206,8 +207,7 @@
     $('modal-titulo').textContent = p ? 'Editar Proyecto' : 'Nuevo Proyecto de Manufactura';
     $('project-title').value = p ? p.titulo || '' : '';
     $('project-desc').value = p ? p.descripcion || '' : '';
-    if (p && p.categoria) elegirOpcion($('project-category'), p.categoria);
-    else $('project-category').selectedIndex = 0;
+    llenarCategorias(p && p.categoria ? p.categoria : null);
     if (p && p.estado) elegirOpcion($('project-status'), p.estado);
     else $('project-status').selectedIndex = 0;
 
@@ -238,14 +238,66 @@
     modal.classList.remove('hidden');
   }
 
+  /* ---------------- Categorías ---------------- */
+  /* La lista ya no está fija en el HTML. Se arma con:
+       · las que trae el diseño original,
+       · las que ya usa cualquier proyecto del portafolio,
+       · las que tú agregues, que quedan guardadas en este navegador.
+     Y siempre incluye la opción "+ Nueva categoría…". */
+
+  const CATS_BASE = ['Aeroespacial', 'Automatización', 'Automotriz', 'Biomédica',
+    'Diseño CAD', 'Herramentales', 'Ingeniería Inversa', 'Investigación',
+    'Manufactura Aditiva', 'Metrología', 'Robótica'];
+  const NUEVA = '+ Nueva categoría…';
+
+  function catsGuardadas() {
+    try { return JSON.parse(localStorage.getItem('lma_categorias') || '[]'); }
+    catch (e) { return []; }
+  }
+  function guardarCat(c) {
+    const l = catsGuardadas();
+    if (!l.includes(c)) { l.push(c); localStorage.setItem('lma_categorias', JSON.stringify(l)); }
+  }
+
+  function todasLasCategorias() {
+    const set = new Set(CATS_BASE);
+    proyectos.forEach((p) => { if (p.categoria) set.add(p.categoria); });
+    catsGuardadas().forEach((c) => set.add(c));
+    return Array.from(set).sort((a, b) => a.localeCompare(b, 'es'));
+  }
+
+  function llenarCategorias(seleccionada) {
+    const sel = $('project-category');
+    if (!sel) return;
+    const lista = todasLasCategorias();
+    if (seleccionada && !lista.includes(seleccionada)) lista.push(seleccionada);
+    sel.innerHTML = lista.map((c) =>
+      `<option value="${esc(c)}"${c === seleccionada ? ' selected' : ''}>${esc(c)}</option>`
+    ).join('') + `<option value="${NUEVA}">${NUEVA}</option>`;
+    if (seleccionada) sel.value = seleccionada;
+  }
+
+  /* Al elegir "+ Nueva categoría…" se pide el nombre y se agrega */
+  (function engancharCategorias() {
+    const sel = $('project-category');
+    if (!sel) return;
+    let previa = sel.value;
+    sel.addEventListener('change', () => {
+      if (sel.value !== NUEVA) { previa = sel.value; return; }
+      const nombre = (prompt('Nombre de la categoría nueva:') || '').trim();
+      if (!nombre) { llenarCategorias(previa); return; }
+      guardarCat(nombre);
+      llenarCategorias(nombre);
+      previa = nombre;
+      aviso('Categoría "' + nombre + '" agregada.', 'ok');
+    });
+  })();
+
   function elegirOpcion(select, valor) {
+    if (select && select.id === 'project-category') { llenarCategorias(valor); return; }
     const op = [...select.options].find((o) => o.value === valor || o.text === valor);
     if (op) select.value = op.value;
-    else {
-      // Categoría que existe en el JSON pero no en la lista: se agrega al vuelo
-      const nueva = new Option(valor, valor, true, true);
-      select.add(nueva);
-    }
+    else select.add(new Option(valor, valor, true, true));
   }
 
   function cerrarModal() {
@@ -571,6 +623,7 @@
   function borrar(indice) {
     const p = proyectos[indice];
     if (!confirm(`¿Eliminar "${p.titulo}"?\n\nLa imagen no se borra del repositorio, solo se quita del portafolio.`)) return;
+    if (p && p.id) borradosEnEstaSesion.add(p.id);
     proyectos.splice(indice, 1);
     sucio = true;
     pintar();
@@ -659,11 +712,38 @@
                            'Medio: ' + lista[i].nombre);
       }
       aviso('Actualizando el portafolio…', 'info');
+
+      /* Fusión antes de escribir: se relee lo que hay en GitHub y se
+         combina por id. Así, si el panel tenía una copia vieja, no
+         se borran los proyectos que falten en memoria. */
+      let remotos = [];
+      try {
+        const meta = await api(RUTA_JSON);
+        if (meta && meta.content) {
+          remotos = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g, '')))));
+        }
+      } catch (e) { console.warn('No se pudo releer el portafolio remoto', e); }
+
+      const porId = new Map();
+      (Array.isArray(remotos) ? remotos : []).forEach((p) => { if (p && p.id) porId.set(p.id, p); });
+      proyectos.forEach((p) => { if (p && p.id) porId.set(p.id, p); });   // lo de memoria manda
+      borradosEnEstaSesion.forEach((id) => porId.delete(id));             // salvo lo borrado aquí
+
+      const fusionado = Array.from(porId.values())
+        .sort((a, b) => String(b.fecha || '').localeCompare(String(a.fecha || '')));
+
+      const recuperados = fusionado.length - proyectos.length;
+      proyectos = fusionado;
+
       await subirArchivo(
         RUTA_JSON,
         aBase64(JSON.stringify(proyectos, null, 2)),
         datos ? 'Portafolio: ' + datos.titulo : 'Portafolio actualizado'
       );
+      if (recuperados > 0) {
+        aviso(`Se conservaron ${recuperados} proyecto(s) que no estaban en esta pantalla.`, 'info');
+      }
+      pintar();
       sucio = false;
       aviso('Publicado. Tu sitio se actualiza en aproximadamente un minuto.', 'ok');
     } catch (e) {
@@ -712,30 +792,59 @@
 
   const CARPETA = 'img/portafolio';
 
-  function rutasEnUso() {
+  function rutasDe(lista) {
     const usadas = new Set();
     const agregar = (r) => {
       if (!r || typeof r !== 'string') return;
-      // "/img/portafolio/foto.webp" -> "foto.webp"
-      const nombre = r.split('/').pop().split('?')[0];
+      const nombre = decodeURIComponent(r.split('/').pop().split('?')[0]);
       if (nombre) usadas.add(nombre);
     };
-    proyectos.forEach((p) => {
+    (lista || []).forEach((p) => {
       agregar(p.imagen);
-      (p.galeria || []).forEach(agregar);
+      (p.galeria || []).forEach((g) => agregar(typeof g === 'string' ? g : g && g.src));
       agregar(p.video);
       agregar(p.videoPoster);
+      (p.medios || []).forEach((m) => { if (m) { agregar(m.src); agregar(m.poster); } });
     });
     return usadas;
   }
 
+  /* Busca archivos sin uso. NUNCA se apoya en la copia que tiene el
+     panel en memoria: relee el portafolio desde GitHub. Si esa lectura
+     falla, se aborta sin borrar nada. */
   async function buscarHuerfanos() {
+    const meta = await api(RUTA_JSON);
+    if (!meta || !meta.content) {
+      throw new Error('No se pudo leer el portafolio desde GitHub. No se borrará nada.');
+    }
+    let vigentes;
+    try {
+      vigentes = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g, '')))));
+    } catch (e) {
+      throw new Error('El portafolio remoto no se pudo interpretar. No se borrará nada.');
+    }
+    if (!Array.isArray(vigentes) || !vigentes.length) {
+      throw new Error('El portafolio remoto salió vacío. Por seguridad no se borra nada.');
+    }
+    if (vigentes.length < proyectos.length) {
+      throw new Error('La versión en GitHub tiene ' + vigentes.length + ' proyecto(s) y esta pantalla ' +
+                      proyectos.length + '. Recarga el panel antes de limpiar.');
+    }
+
     const listado = await api(CARPETA);
-    if (!listado || !Array.isArray(listado)) return [];
-    const usadas = rutasEnUso();
-    return listado
+    if (!listado || !Array.isArray(listado)) return { sueltos: [], vigentes: vigentes.length };
+
+    const usadas = rutasDe(vigentes);
+    const sueltos = listado
       .filter((f) => f.type === 'file' && f.name !== '.gitkeep' && !usadas.has(f.name))
       .map((f) => ({ nombre: f.name, sha: f.sha, kb: Math.round((f.size || 0) / 1024) }));
+
+    // Salvaguarda: si "sobra" más de la mitad de la carpeta, algo anda mal
+    if (listado.length > 4 && sueltos.length > listado.length * 0.6) {
+      throw new Error('Saldrían ' + sueltos.length + ' de ' + listado.length +
+        ' archivos como sin uso. Eso no es normal: se cancela por seguridad. Recarga el panel e inténtalo de nuevo.');
+    }
+    return { sueltos, vigentes: vigentes.length };
   }
 
   async function borrarArchivo(nombre, sha) {
@@ -847,15 +956,17 @@
         }
         salida.textContent = 'Revisando el repositorio…';
         try {
-          const sueltos = await buscarHuerfanos();
+          const { sueltos, vigentes } = await buscarHuerfanos();
           if (!sueltos.length) {
-            salida.innerHTML = '<span style="color:#0f7b3e">No hay archivos sin uso. Todo está limpio.</span>';
+            salida.innerHTML = '<span style="color:#0f7b3e">No hay archivos sin uso. ' +
+              'Se revisaron ' + vigentes + ' proyecto(s). Todo está limpio.</span>';
             return;
           }
           const totalKb = sueltos.reduce((a, b) => a + b.kb, 0);
           const peso = totalKb > 1024 ? (totalKb / 1024).toFixed(1) + ' MB' : totalKb + ' KB';
           salida.innerHTML =
-            '<p style="margin-bottom:6px"><b>' + sueltos.length + ' archivo(s) sin uso · ' + peso + '</b></p>' +
+            '<p style="margin-bottom:6px"><b>' + sueltos.length + ' archivo(s) sin uso · ' + peso + '</b><br>' +
+            '<span style="font-weight:400">Comparado contra ' + vigentes + ' proyecto(s) leídos de GitHub.</span></p>' +
             '<ul style="max-height:120px;overflow:auto;margin:0 0 8px 16px">' +
             sueltos.map((f) => '<li>' + esc(f.nombre) + ' — ' + f.kb + ' KB</li>').join('') +
             '</ul>' +
@@ -908,7 +1019,7 @@
   conectar('pag-prev', () => { if (pagina > 0) { pagina--; pintar(); } });
   conectar('pag-next', () => { pagina++; pintar(); });
   conectar('btn-filtrar', () => {
-    const cats = [...new Set(proyectos.map((p) => p.categoria).filter(Boolean))];
+    const cats = [...new Set(proyectos.map((p) => p.categoria).filter(Boolean))].sort();
     const elegida = prompt('Filtrar por categoría:\n\n' + cats.join('\n') + '\n\n(deja vacío para ver todas)');
     if (elegida === null) return;
     filtroCategoria = elegida.trim() || null;
@@ -934,15 +1045,37 @@
   });
 
   /* ---------------- Arranque ---------------- */
+  /* Lee el portafolio DIRECTO de GitHub cuando hay token.
+     Leerlo del sitio publicado era el origen del problema: Cloudflare
+     guarda copias en caché, así que el panel podía cargar una versión
+     vieja y, al publicar, borraba los proyectos agregados después. */
+  async function leerPortafolio() {
+    if (cfg.activo) {
+      const meta = await api(RUTA_JSON);
+      if (meta && meta.content) {
+        const texto = decodeURIComponent(escape(atob(meta.content.replace(/\n/g, ''))));
+        return { lista: JSON.parse(texto), fuente: 'github' };
+      }
+      return { lista: [], fuente: 'github' };
+    }
+    const r = await fetch(RUTA_JSON + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    return { lista: await r.json(), fuente: 'sitio' };
+  }
+
   (async function cargar() {
     try {
-      const r = await fetch(RUTA_JSON, { cache: 'no-store' });
-      if (!r.ok) throw new Error(r.status);
-      const d = await r.json();
-      proyectos = (Array.isArray(d) ? d : d.proyectos || [])
+      const { lista, fuente } = await leerPortafolio();
+      proyectos = (Array.isArray(lista) ? lista : lista.proyectos || [])
         .sort((a, b) => String(b.fecha || '').localeCompare(String(a.fecha || '')));
+      if (fuente === 'sitio' && proyectos.length) {
+        aviso('Leyendo del sitio publicado (puede estar desactualizado). ' +
+              'Activa el modo GitHub para trabajar siempre sobre la versión real.', 'info');
+      }
+      llenarCategorias(null);   // deja el desplegable listo desde el arranque
       pintar();
     } catch (e) {
+      llenarCategorias(null);
       grid.innerHTML =
         '<p class="font-body-md text-on-surface-variant col-span-full text-center py-xl">' +
         'No se pudo leer data/proyectos.json. Revisa que exista, que sea válido, y que estés viendo el panel ' +

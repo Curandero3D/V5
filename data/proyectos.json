@@ -1,5 +1,26 @@
 [
   {
+    "id": "PROJ-6189",
+    "titulo": "Herramienta de ventosa para manipulación de tarros emplayados — NIVEA  Problema",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/herramienta-de-ventosa-para-manipulacion-video-portada.webp",
+    "medios": [
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/herramienta-de-ventosa-para-manipulacion-video.mp4",
+        "poster": "/img/portafolio/herramienta-de-ventosa-para-manipulacion-video-portada.webp"
+      }
+    ],
+    "galeria": [],
+    "descripcion": "En la línea de NIVEA se necesitaba levantar el pack completo de tarros de crema ya emplayados (envueltos en plástico para su empaquetado) con un robot industrial de 6 ejes, para pasarlos a su empaque secundario. Adquirir la herramienta de vacío directamente del fabricante del equipo representaba un costo elevado y un tiempo de entrega largo.\n\nSolución\nDiseñé y fabriqué una herramienta de ventosa (end-of-arm tool) a medida:\n\nCuerpo/soporte fabricado por impresión 3D combinando resina y filamento técnico, según los requisitos de precisión y resistencia mecánica de cada componente.\nDistribución de ventosas dimensionada al arreglo del pack de tarros emplayados, para levantarlo en un solo ciclo.\nMontaje compatible con el brazo robótico existente, integrándose a la celda sin modificar el resto de la automatización.\n\nResultado\nHerramienta funcional en línea a una fracción del costo y del tiempo de entrega de la alternativa OEM, manteniendo el ritmo de producción del proceso de empaquetado.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/herramienta-de-ventosa-para-manipulacion-video.mp4",
+    "videoPoster": "/img/portafolio/herramienta-de-ventosa-para-manipulacion-video-portada.webp"
+  },
+  {
     "id": "PROJ-3746",
     "titulo": "Equipo de medición dimensional e inspección de coolers EGR",
     "categoria": "Automotriz",

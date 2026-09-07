@@ -23,9 +23,13 @@
   {
     "id": "PROJ-3746",
     "titulo": "Equipo de medición dimensional e inspección de coolers EGR",
-    "categoria": "Automotriz",
+    "categoria": "Metrología",
     "estado": "Completado",
     "imagen": "/img/portafolio/equipo-de-medicion-dimensional-e-inspecc.webp",
+    "descripcion": "Problema\nUn fabricante de componentes EGR necesitaba verificar de forma sistemática las dimensiones críticas de tubos y bridas soldadas en el exterior del cooler — cotas que, por tratarse de subensambles soldados, tienen variación pieza a pieza y son determinantes para el ensamble posterior aguas abajo. La inspección requería un método objetivo, repetible y trazable, además de una vía para corregir piezas fuera de tolerancia sin desecharlas.\n\nSolución\nDiseñé la máquina completa de principio a fin — mecánica, fixtures e integración:\n\nFixture de sujeción neumático con posicionamiento repetible del subensamble soldado, referenciado a los datums de medición.\nMesa giratoria indexada que presenta las distintas caras del producto al arreglo de palpadores sin reposicionamiento manual.\nArreglo de palpadores digitales de precisión midiendo las cotas críticas de tubos y bridas, con lectura numérica por canal e interfaz de operador que emite veredicto pasa/no pasa en tiempo real.\nGabinete de seguridad con guardas de policarbonato, torre de señalización y paro de emergencia, integrado sobre bastidor rodante para reubicación en planta.\nEstación de corrección manual, independiente del ciclo automático, para ajustar la posición de tubos en piezas fuera de tolerancia y reverificarlas sin generar scrap.\n\nResultado\nSistema de inspección dimensional 100% en línea, con criterio pasa/no pasa objetivo y trazable por pieza, y una ruta de corrección integrada que redujo el desperdicio de subensambles soldados fuera de especificación.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
     "medios": [
       {
         "tipo": "imagen",
@@ -80,10 +84,6 @@
       "/img/portafolio/equipo-de-medicion-dimensional-e-inspecc-8.webp",
       "/img/portafolio/equipo-de-medicion-dimensional-e-inspecc-9.webp"
     ],
-    "descripcion": "Problema\nUn fabricante de componentes EGR necesitaba verificar de forma sistemática las dimensiones críticas de tubos y bridas soldadas en el exterior del cooler — cotas que, por tratarse de subensambles soldados, tienen variación pieza a pieza y son determinantes para el ensamble posterior aguas abajo. La inspección requería un método objetivo, repetible y trazable, además de una vía para corregir piezas fuera de tolerancia sin desecharlas.\n\nSolución\nDiseñé la máquina completa de principio a fin — mecánica, fixtures e integración:\n\nFixture de sujeción neumático con posicionamiento repetible del subensamble soldado, referenciado a los datums de medición.\nMesa giratoria indexada que presenta las distintas caras del producto al arreglo de palpadores sin reposicionamiento manual.\nArreglo de palpadores digitales de precisión midiendo las cotas críticas de tubos y bridas, con lectura numérica por canal e interfaz de operador que emite veredicto pasa/no pasa en tiempo real.\nGabinete de seguridad con guardas de policarbonato, torre de señalización y paro de emergencia, integrado sobre bastidor rodante para reubicación en planta.\nEstación de corrección manual, independiente del ciclo automático, para ajustar la posición de tubos en piezas fuera de tolerancia y reverificarlas sin generar scrap.\n\nResultado\nSistema de inspección dimensional 100% en línea, con criterio pasa/no pasa objetivo y trazable por pieza, y una ruta de corrección integrada que redujo el desperdicio de subensambles soldados fuera de especificación.",
-    "cliente": "",
-    "fecha": "2026-09",
-    "destacado": false,
     "video": "/img/portafolio/equipo-de-medicion-dimensional-e-inspecc-video.mp4",
     "videoPoster": "/img/portafolio/equipo-de-medicion-dimensional-e-inspecc-video-portada.webp"
   },

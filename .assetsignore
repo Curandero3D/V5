@@ -1,0 +1,20 @@
+# Archivos que NO deben publicarse en el sitio.
+# Cloudflare Workers intenta subir todo lo que hay en la carpeta,
+# incluida la carpeta oculta .git, que es el historial interno de
+# Git y no forma parte del sitio. Cuando ese historial pasó de
+# 25 MB, las publicaciones empezaron a fallar.
+
+.git
+.gitignore
+.assetsignore
+node_modules
+
+# Documentación y herramientas: no las necesita el visitante
+herramientas
+referencia-diseno
+_reemplazadas
+admin-cms
+*.md
+DESIGN.md
+wrangler.jsonc
+_headers

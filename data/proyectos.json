@@ -1,5 +1,82 @@
 [
   {
+    "id": "PROJ-7412",
+    "titulo": "Plantilla para prueba de fugas por inmersión",
+    "categoria": "Herramentales",
+    "estado": "Completado",
+    "imagen": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp",
+    "medios": [
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-10.webp"
+      },
+      {
+        "tipo": "imagen",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-11.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
+        "poster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
+      }
+    ],
+    "galeria": [
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-2.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-3.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-4.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-5.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-6.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-7.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-8.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-9.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-10.webp",
+      "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-11.webp"
+    ],
+    "descripcion": "RECUPERADO — edita esta descripción desde el panel.",
+    "cliente": "",
+    "fecha": "2026-08",
+    "destacado": false,
+    "video": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video.mp4",
+    "videoPoster": "/img/portafolio/plantilla-para-prueba-de-fugas-por-inmer-video-portada.webp"
+  },
+  {
     "id": "PROJ-6189",
     "titulo": "Herramienta de ventosa para manipulación de tarros emplayados — NIVEA  Problema",
     "categoria": "Herramentales",

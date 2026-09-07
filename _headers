@@ -1,0 +1,18 @@
+# Le dice a Cloudflare cómo guardar cada tipo de archivo.
+# Sin esto, las páginas y los datos pueden quedarse en caché
+# y seguir mostrando una versión vieja después de publicar.
+
+/data/*
+  Cache-Control: no-cache, must-revalidate
+
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=300
+
+/css/*
+  Cache-Control: public, max-age=300
+
+/img/*
+  Cache-Control: public, max-age=31536000

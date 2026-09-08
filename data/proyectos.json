@@ -379,17 +379,6 @@
     "videoPoster": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video-portada.webp"
   },
   {
-    "id": "PROJ-901",
-    "titulo": "Célula de Ensamble Robótico",
-    "categoria": "Robótica",
-    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWWIF1hJsqYhla8hcS1BE-aYiodqU_DFTd0SLdtqL1HRMBN7B5L4k8Ycu72dCrVeWTJxA_uV6CGeH7ZPAvkkw6U5nupj7ezo1X_NuOUVR4hXnPJOsYhqymSm-K--w2MsrtKXH0XjDjVXFOSPYAZKAMMotLwqyA2bPpbnudpR8k6AqR-DTTBuW6SW2z3o-MsdimVxXYlPOXnEQZhGGYOuBvIJvD7Z5_1mCDt9-UUYG8cZ4Ys_2SrEgY",
-    "descripcion": "Integración de brazos robóticos de 6 ejes para ensamble de precisión en ambiente controlado, reduciendo el ciclo de producción en un 25%.",
-    "cliente": "Sector Automotriz Tier 1",
-    "fecha": "2026-05",
-    "destacado": true,
-    "estado": "Completado"
-  },
-  {
     "id": "PROJ-882",
     "titulo": "Escaneo de Motores de Alta Precisión",
     "categoria": "Metrología",

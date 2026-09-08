@@ -377,16 +377,5 @@
     ],
     "video": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video.mp4",
     "videoPoster": "/img/portafolio/diseno-e-implementacion-de-pucks-de-tran-video-portada.webp"
-  },
-  {
-    "id": "PROJ-860",
-    "titulo": "Línea de Producción Automatizada",
-    "categoria": "Automatización",
-    "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuA0u4O25IlhUhAOKUdXt6TRWnJLio1SFVC59zws018E6tEYj6prve0gDmDDEsCB0iGbCBmgFmVWPtYYq79TzOHcnti6V4vX1c9P1dmJolrIE_VTGsUwOiW6kUeHppdqLLot_Tj0LjKwbOJdtZvsM7o3gFCbWNzo0xbnkJIwatgowciOf__8j2llsXuVWlULCSTrdXFsTjaQEX5uL4S8YUf3pEpWQ9IfVGn8W9D1h3t5H293vYnmCJnl",
-    "descripcion": "Diseño y puesta en marcha de línea de soldadura automatizada con monitoreo en tiempo real y sistemas de seguridad integrados.",
-    "cliente": "Bienes de Consumo",
-    "fecha": "2025-11",
-    "destacado": false,
-    "estado": "Activo (En Proceso)"
   }
 ]

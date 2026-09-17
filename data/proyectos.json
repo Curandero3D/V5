@@ -265,6 +265,37 @@
     "videoPoster": "/img/portafolio/herramental-de-gripper-para-linea-de-lle-video-portada.webp"
   },
   {
+    "id": "PROJ-7759",
+    "titulo": "Escalera de viga central curva",
+    "categoria": "Paileria residencial",
+    "estado": "Activo (En Proceso)",
+    "imagen": "/img/portafolio/escalera-de-viga-central-curva-video-portada.webp",
+    "medios": [
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/escalera-de-viga-central-curva-video.mp4",
+        "poster": "/img/portafolio/escalera-de-viga-central-curva-video-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/escalera-de-viga-central-curva-video-2.mp4",
+        "poster": "/img/portafolio/escalera-de-viga-central-curva-video-2-portada.webp"
+      },
+      {
+        "tipo": "video",
+        "src": "/img/portafolio/escalera-de-viga-central-curva-video-3.mp4",
+        "poster": "/img/portafolio/escalera-de-viga-central-curva-video-3-portada.webp"
+      }
+    ],
+    "galeria": [],
+    "descripcion": "El diseño arquitectónico contemplaba una escalera de viga central (stringer) con una curva continua en forma de S, sosteniendo peldaños en voladizo sin apoyo lateral. Lograr esa curva en acero, sin perder sección transversal ni introducir puntos débiles que comprometieran la resistencia estructural bajo carga, no es un proceso estándar de taller.\n\nSolución\nDesarrollé el proyecto de principio a fin, diseño y fabricación:\n\nDiseño estructural en CAD de la viga central y su geometría de curvatura, definiendo el desarrollo de la pieza antes de manufactura.\nCorte y rolado/curvado de acero para formar la viga siguiendo la curva de diseño de forma continua, verificando que la sección se mantuviera constante a lo largo de todo el desarrollo.\nSoldadura y ensamble de la viga con los soportes de cada peldaño en voladizo, controlando la escuadra y el nivel de cada peldaño durante el proceso.\nFabricación en taller con plantillas y sujeción temporal para mantener la geometría de la curva durante el rolado y la soldadura.\n\nResultado\nEscalera funcional con la curva continúa especificada en el diseño arquitectónico, resistencia estructural validada y peldaños en voladizo correctamente nivelados y alineados.",
+    "cliente": "",
+    "fecha": "2026-09",
+    "destacado": false,
+    "video": "/img/portafolio/escalera-de-viga-central-curva-video.mp4",
+    "videoPoster": "/img/portafolio/escalera-de-viga-central-curva-video-portada.webp"
+  },
+  {
     "id": "PROJ-7412",
     "titulo": "Plantilla para prueba de fugas por inmersión",
     "categoria": "Automotriz",
